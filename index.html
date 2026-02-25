@@ -1,149 +1,136 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tugas Dart - Marsya</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas Dart - Marsya</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap');
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  font-family:Roboto,sans-serif;
+  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  color:#fff;
+}
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+.card{
+  width:100%;
+  max-width:380px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(12px);
+  padding:24px;
+  border-radius:16px;
+  text-align:center;
+}
 
-    .card {
-      width: 100%;
-      max-width: 380px;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(12px);
-      padding: 24px;
-      border-radius: 16px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
+h2{
+  font-family:Orbitron;
+  color:#ff00ff;
+}
 
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #ff00ff;
-      text-shadow: 0 0 8px #ff00ff;
-      margin-bottom: 12px;
-    }
+button{
+  width:100%;
+  margin-top:16px;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-family:Orbitron;
+  background:linear-gradient(45deg,#ff00ff,#00ffff);
+  color:white;
+}
 
-    p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #ddd;
-    }
+img{
+  width:100%;
+  margin-top:20px;
+  border-radius:12px;
+}
 
-    button {
-      width: 100%;
-      margin-top: 18px;
-      padding: 12px;
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      cursor: pointer;
-    }
+/* ===== MODAL (ANTI AUTO OPEN) ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
 
-    img {
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 12px;
-      border: 2px solid #ff00ff;
-    }
+  /* KUNCI */
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+  transition:.2s;
+}
 
-    /* ===== MODAL ===== */
-    .modal {
-      display: none; /* 🔴 PENTING */
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      z-index: 999;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-    }
+.modal.active{
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+}
 
-    .modal-box {
-      width: 100%;
-      max-width: 900px;
-      background: #111;
-      border-radius: 16px;
-      padding: 15px;
-    }
+.modal-box{
+  width:100%;
+  max-width:900px;
+  background:#111;
+  padding:15px;
+  border-radius:16px;
+}
 
-    .close {
-      text-align: right;
-      font-size: 22px;
-      cursor: pointer;
-      color: #ff00ff;
-      margin-bottom: 10px;
-    }
+.close{
+  text-align:right;
+  cursor:pointer;
+  font-size:22px;
+  color:#ff00ff;
+}
 
-    iframe {
-      width: 100%;
-      height: 60vh;
-      border: none;
-      border-radius: 12px;
-    }
-
-    @media (max-width: 480px) {
-      iframe {
-        height: 55vh;
-      }
-    }
-  </style>
+iframe{
+  width:100%;
+  height:60vh;
+  border:none;
+  border-radius:12px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h2>Program Perhitungan Dart</h2>
-    <p>
-      Program ini dibuat menggunakan bahasa Dart untuk melatih
-      pemahaman alur logika pemrograman. Output program ditampilkan
-      dalam bentuk gambar berikut.
-    </p>
+<div class="card">
+  <h2>Program Perhitungan Dart</h2>
+  <p>
+    Program ini dibuat menggunakan bahasa Dart
+    untuk melatih pemahaman logika pemrograman.
+  </p>
 
-    <button onclick="openModal()">Lihat Source Code</button>
+  <button onclick="openModal()">Lihat Source Code</button>
 
-    <img src="output.jpeg" alt="Output Program Dart">
+  <img src="output.jpeg" alt="Output Program">
+</div>
+
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="close" onclick="closeModal()">✖</div>
+    <iframe src="https://dartpad.dev/embed-dart.html?id=02a5ebdb057923071d0ed9bc15c70b6f"></iframe>
   </div>
+</div>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <div class="close" onclick="closeModal()">✖</div>
-      <iframe src="https://dartpad.dev/embed-dart.html?id=02a5ebdb057923071d0ed9bc15c70b6f"></iframe>
-    </div>
-  </div>
-
-  <script>
-    function openModal() {
-      document.getElementById("modal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
+<script>
+function openModal(){
+  document.getElementById("modal").classList.add("active");
+}
+function closeModal(){
+  document.getElementById("modal").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
