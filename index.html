@@ -3,63 +3,125 @@
 <head>
   <title>Tugas Dart - Marsya</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      margin: 0;
+      padding: 40px 20px;
     }
+
     .card {
-      background: white;
-      padding: 20px;
-      max-width: 600px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      padding: 30px;
+      max-width: 700px;
       margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+      transition: transform 0.3s ease;
     }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff00ff;
+      text-shadow: 0 0 8px #ff00ff, 0 0 15px #ff69b4;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
     button {
-      margin-top: 10px;
-      padding: 10px 14px;
-      background: purple;
-      color: white;
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 10px;
       cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255,0,255,0.6), 0 4px 15px rgba(0,255,255,0.6);
+      transition: all 0.3s ease;
     }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(255,0,255,0.9), 0 6px 25px rgba(0,255,255,0.9);
+    }
+
     img {
       width: 100%;
-      margin-top: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      margin-top: 25px;
+      border-radius: 12px;
+      border: 2px solid #ff00ff;
+      box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
     }
+
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
     }
+
     .modal-box {
-      background: white;
+      background: #111;
       width: 90%;
       max-width: 900px;
       margin: 5% auto;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid #ff00ff;
+      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
     }
+
     .close {
       float: right;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 20px;
+      color: #ff00ff;
+      transition: all 0.2s ease;
+    }
+    .close:hover {
+      color: #00ffff;
+      transform: scale(1.2);
+    }
+
+    iframe {
+      border-radius: 12px;
+      border: 1px solid #00ffff;
+      box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+    }
+
+    @media(max-width: 768px){
+      body { padding: 20px; }
+      h2 { font-size: 1.8rem; }
+      p { font-size: 0.95rem; }
+      button { width: 100%; }
     }
   </style>
 </head>
-
 <body>
 
 <div class="card">
   <h2>Program Perhitungan Dart</h2>
   <p>
     Program ini dibuat menggunakan bahasa Dart sebagai latihan memahami alur logika pemrograman.
-    Hasil dari proses program ditampilkan dalam bentuk gambar pada bagian berikut.
+    Hasil dari proses program ditampilkan dalam bentuk gambar di bawah.
   </p>
 
   <button onclick="openModal()">Detail & Source Code</button>
@@ -89,35 +151,3 @@
 
 </body>
 </html>
-
-/* Atur body dasar */
-body {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* background gradient keren */
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-/* Header */
-header h1 {
-  margin: 40px 0 20px;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px rgba(0,0,0,0.3);
-}
-
-/* Paragraf */
-.intro p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.6;
-}
-
-/* Footer */
-footer {
-  margin-top: 50px;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
