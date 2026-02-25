@@ -1,153 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tugas Dart - Marsya</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap');
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
+      min-height: 100vh;
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #fff;
-      margin: 0;
-      padding: 20px 14px;
+
+      /* CENTER LAYOUT */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
     }
 
     .card {
-      background: rgba(255,255,255,0.05);
+      width: 100%;
+      max-width: 380px;
+      background: rgba(255,255,255,0.06);
       backdrop-filter: blur(12px);
-      padding: 30px;
-      max-width: 700px;
-      margin: auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      padding: 24px;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.2);
       text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
     h2 {
       font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
       color: #ff00ff;
-      text-shadow: 0 0 8px #ff00ff, 0 0 15px #ff69b4;
-      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ff00ff;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       color: #ddd;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-weight: bold;
+      margin-top: 18px;
+      width: 100%;
+      padding: 12px;
       font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
       background: linear-gradient(45deg, #ff00ff, #00ffff);
       color: #fff;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255,0,255,0.6), 0 4px 15px rgba(0,255,255,0.6);
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(255,0,255,0.9), 0 6px 25px rgba(0,255,255,0.9);
+      box-shadow: 0 4px 15px rgba(255,0,255,0.6);
     }
 
     img {
+      margin-top: 20px;
       width: 100%;
-      margin-top: 25px;
+      height: auto;
       border-radius: 12px;
       border: 2px solid #ff00ff;
-      box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+      box-shadow: 0 0 15px #ff00ff;
     }
 
+    /* ===== MODAL ===== */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(5px);
       z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 15px;
     }
 
     .modal-box {
-      background: #111;
-      width: 90%;
+      width: 100%;
       max-width: 900px;
-      margin: 5% auto;
-      padding: 20px;
-      border-radius: 15px;
+      background: #111;
+      border-radius: 16px;
+      padding: 15px;
       border: 1px solid #ff00ff;
-      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+      box-shadow: 0 0 20px #ff00ff;
     }
 
     .close {
-      float: right;
+      text-align: right;
+      font-size: 22px;
       cursor: pointer;
-      font-size: 20px;
       color: #ff00ff;
-      transition: all 0.2s ease;
-    }
-    .close:hover {
-      color: #00ffff;
-      transform: scale(1.2);
+      margin-bottom: 8px;
     }
 
     iframe {
+      width: 100%;
+      height: 60vh;
+      border: none;
       border-radius: 12px;
-      border: 1px solid #00ffff;
-      box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
     }
 
-    @media(max-width: 768px){
-      body { padding: 20px; }
-      h2 { font-size: 1.8rem; }
-      p { font-size: 0.95rem; }
-      button { width: 100%; }
+    /* RESPONSIVE EXTRA */
+    @media (max-width: 480px) {
+      h2 { font-size: 1.25rem; }
+      p { font-size: 0.9rem; }
+      iframe { height: 55vh; }
     }
   </style>
 </head>
+
 <body>
 
-<div class="card">
-  <h2>Program Perhitungan Dart</h2>
-  <p>
-    Program ini dibuat menggunakan bahasa Dart sebagai latihan memahami alur logika pemrograman.
-    Hasil dari proses program ditampilkan dalam bentuk gambar di bawah.
-  </p>
+  <div class="card">
+    <h2>Program Perhitungan Dart</h2>
+    <p>
+      Program ini dibuat menggunakan bahasa Dart untuk melatih pemahaman
+      alur logika pemrograman. Hasil eksekusi program ditampilkan dalam
+      bentuk output berikut.
+    </p>
 
-  <button onclick="openModal()">Detail & Source Code</button>
+    <button onclick="openModal()">Detail & Source Code</button>
 
-  <img src="output.jpeg" alt="Output Program Dart">
-</div>
-
-<div id="modal" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeModal()">✖</span>
-    <iframe
-      src="https://dartpad.dev/embed-dart.html?id=02a5ebdb057923071d0ed9bc15c70b6f"
-      width="100%"
-      height="500">
-    </iframe>
+    <img src="output.jpeg" alt="Output Program Dart">
   </div>
-</div>
 
-<script>
-  function openModal() {
-    document.getElementById("modal").style.display = "block";
-  }
-  function closeModal() {
-    document.getElementById("modal").style.display = "none";
-  }
-</script>
+  <!-- MODAL -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <div class="close" onclick="closeModal()">✖</div>
+      <iframe
+        src="https://dartpad.dev/embed-dart.html?id=02a5ebdb057923071d0ed9bc15c70b6f">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("modal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
