@@ -19,7 +19,6 @@
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #fff;
 
-      /* CENTER LAYOUT */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -27,6 +26,7 @@
       padding: 20px;
     }
 
+    /* ===== CARD ===== */
     .card {
       width: 100%;
       max-width: 380px;
@@ -76,19 +76,15 @@
       box-shadow: 0 0 15px #ff00ff;
     }
 
-    /* ===== MODAL ===== */
+    /* ===== MODAL (FIX MOBILE) ===== */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.9);
       z-index: 1000;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 15px;
+      overflow-y: auto;   /* PENTING */
+      padding: 20px;
     }
 
     .modal-box {
@@ -99,6 +95,7 @@
       padding: 15px;
       border: 1px solid #ff00ff;
       box-shadow: 0 0 20px #ff00ff;
+      margin: 40px auto; /* mulai dari atas */
     }
 
     .close {
@@ -106,7 +103,7 @@
       font-size: 22px;
       cursor: pointer;
       color: #ff00ff;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     iframe {
@@ -116,7 +113,7 @@
       border-radius: 12px;
     }
 
-    /* RESPONSIVE EXTRA */
+    /* RESPONSIVE */
     @media (max-width: 480px) {
       h2 { font-size: 1.25rem; }
       p { font-size: 0.9rem; }
@@ -141,8 +138,8 @@
   </div>
 
   <!-- MODAL -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
+  <div id="modal" class="modal">
+    <div class="modal-box">
       <div class="close" onclick="closeModal()">✖</div>
       <iframe
         src="https://dartpad.dev/embed-dart.html?id=02a5ebdb057923071d0ed9bc15c70b6f">
@@ -152,10 +149,13 @@
 
   <script>
     function openModal() {
-      document.getElementById("modal").style.display = "flex";
+      document.getElementById("modal").style.display = "block";
+      document.body.style.overflow = "hidden"; // kunci scroll body
     }
+
     function closeModal() {
       document.getElementById("modal").style.display = "none";
+      document.body.style.overflow = "auto";
     }
   </script>
 
