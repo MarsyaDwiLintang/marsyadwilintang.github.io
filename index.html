@@ -1,56 +1,60 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Tugas OOP - Marsya</title>
+    <title>Tugas OOP Dart</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            padding: 0;
         }
 
         .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 0;
+            width: 80%;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        h1, h2 {
+        h1 {
             text-align: center;
+            margin-bottom: 5px;
         }
 
-        a {
-            color: #ffd369;
-            text-decoration: none;
-            font-weight: bold;
+        h3 {
+            text-align: center;
+            margin-top: 0;
+            color: gray;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.7;
         }
 
         ul {
             line-height: 1.8;
         }
 
+        .section {
+            margin-bottom: 30px;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 40px;
             font-size: 14px;
-            opacity: 0.8;
+            color: gray;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -58,79 +62,67 @@
 
 <div class="container">
 
-    <div class="card">
-        <h1>Marsya Dwi Lintang</h1>
-        <h2>NIM: 251410028 | Kelas: SI1A</h2>
-        <p style="text-align:center;">
-            Website Referensi:
-            <a href="https://uliykk1008.github.io/uliiyk.io.oop/" target="_blank">
-                Klik di sini
-            </a>
-        </p>
-    </div>
+    <h1>Marsya Dwi Lintang</h1>
+    <h3>NIM: 251410028 | Kelas: SI1A</h3>
 
-    <div class="card">
+    <hr>
+
+    <div class="section">
         <h2>Pengertian Object Oriented Programming (OOP)</h2>
         <p>
-            Object Oriented Programming (OOP) adalah paradigma pemrograman
-            yang berorientasi pada objek. Dalam OOP, program disusun
-            menggunakan class dan object yang merepresentasikan data
-            dan perilaku.
-        </p>
-        <p>
-            OOP bertujuan untuk membuat program lebih terstruktur,
-            mudah dikembangkan, dan mudah dipelihara.
+            Object Oriented Programming (OOP) adalah paradigma pemrograman 
+            yang berorientasi pada objek. Dalam OOP, program dibangun 
+            menggunakan class dan object yang berfungsi untuk 
+            merepresentasikan data serta perilaku. 
+            Tujuan utama OOP adalah membuat program lebih terstruktur, 
+            mudah dipahami, mudah dikembangkan, dan mudah dipelihara.
         </p>
     </div>
 
-    <div class="card">
+    <div class="section">
         <h2>Konsep Dasar OOP</h2>
         <ul>
-            <li><b>Class</b> → Cetak biru (blueprint) untuk membuat object.</li>
-            <li><b>Object</b> → Instance dari class.</li>
-            <li><b>Encapsulation</b> → Pembungkusan data dan method dalam satu class.</li>
-            <li><b>Inheritance</b> → Pewarisan sifat dari class induk ke class anak.</li>
-            <li><b>Polymorphism</b> → Kemampuan method memiliki banyak bentuk.</li>
-            <li><b>Abstraction</b> → Penyederhanaan kompleksitas dengan menyembunyikan detail tertentu.</li>
+            <li><b>Class</b> adalah cetak biru atau template untuk membuat object.</li>
+            <li><b>Object</b> adalah hasil atau instance dari sebuah class.</li>
+            <li><b>Encapsulation</b> adalah proses pembungkusan data dan method dalam satu class.</li>
+            <li><b>Inheritance</b> adalah pewarisan sifat dari class induk ke class anak.</li>
+            <li><b>Polymorphism</b> adalah kemampuan method memiliki banyak bentuk.</li>
+            <li><b>Abstraction</b> adalah penyederhanaan kompleksitas dengan menyembunyikan detail tertentu.</li>
         </ul>
     </div>
 
-    <div class="card">
+    <div class="section">
         <h2>Penjelasan Program Dart</h2>
 
         <p><b>1. Program Class dan Object</b><br>
-        Link: <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">DartPad 1</a><br>
-        Program ini menampilkan contoh pembuatan class dan object,
-        dimana object dibuat dari class dan dapat memanggil method.</p>
+        Program ini menampilkan pembuatan class dan object. 
+        Object dibuat dari class dan dapat memanggil method 
+        yang ada di dalamnya.</p>
 
         <p><b>2. Program Constructor</b><br>
-        Link: <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">DartPad 2</a><br>
-        Program ini menggunakan constructor untuk menginisialisasi
-        nilai saat object dibuat.</p>
+        Program ini menggunakan constructor untuk 
+        menginisialisasi nilai ketika object dibuat.</p>
 
         <p><b>3. Program Encapsulation</b><br>
-        Link: <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">DartPad 3</a><br>
-        Program ini menunjukkan konsep encapsulation dengan
-        menyembunyikan data menggunakan private variable.</p>
+        Program ini menunjukkan penggunaan private variable 
+        untuk melindungi data agar tidak bisa diakses langsung.</p>
 
         <p><b>4. Program Inheritance</b><br>
-        Link: <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">DartPad 4</a><br>
-        Program ini menampilkan pewarisan sifat dari class induk
-        ke class anak menggunakan extends.</p>
+        Program ini menggunakan extends untuk menunjukkan 
+        pewarisan sifat dari class induk ke class anak.</p>
 
         <p><b>5. Program Polymorphism</b><br>
-        Link: <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">DartPad 5</a><br>
-        Program ini memperlihatkan method overriding sebagai
-        bentuk polymorphism.</p>
+        Program ini menampilkan method overriding sebagai 
+        contoh polymorphism.</p>
 
         <p><b>6. Program Abstraction</b><br>
-        Link: <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">DartPad 6</a><br>
-        Program ini menggunakan abstract class untuk
-        menyederhanakan struktur program.</p>
+        Program ini menggunakan abstract class untuk 
+        menyembunyikan detail implementasi.</p>
+
     </div>
 
     <div class="footer">
-        © 2026 - Tugas OOP Dart | Marsya Dwi Lintang
+        © 2026 - Tugas OOP Dart
     </div>
 
 </div>
