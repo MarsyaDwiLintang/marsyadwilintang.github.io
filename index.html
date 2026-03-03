@@ -1,355 +1,47 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OOP Dart — Marsya Dwi Lintang (251410028) SI2A</title>
+<!-- MATERI OOP -->
+<div class="section">
+  <h2>Pengertian Object Oriented Programming (OOP)</h2>
+  <p>
+    Object Oriented Programming (OOP) adalah paradigma pemrograman
+    yang berorientasi pada objek. Dalam OOP, program disusun
+    berdasarkan class dan object yang saling berinteraksi.
+  </p>
+  <p>
+    OOP bertujuan untuk membuat kode lebih terstruktur,
+    mudah dipahami, dapat digunakan kembali (reusable),
+    serta mudah dikembangkan.
+  </p>
+</div>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<div class="section">
+  <h2>Konsep Dasar OOP</h2>
 
-  <style>
-    :root{
-      --bg:#0b1020;
-      --bg2:#090d18;
-      --card: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.14);
-      --text:#eef3ff;
-      --muted: rgba(238,243,255,.72);
-      --muted2: rgba(238,243,255,.55);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r:18px;
-      --r2:24px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 18% 10%, rgba(123,97,255,.28), transparent 55%),
-        radial-gradient(900px 600px at 85% 15%, rgba(24,214,255,.22), transparent 55%),
-        radial-gradient(900px 600px at 55% 95%, rgba(255,72,195,.14), transparent 55%),
-        linear-gradient(180deg, var(--bg2), var(--bg));
-      overflow-x:hidden;
-    }
-    .wrap{
-      width:min(980px, 92vw);
-      margin: 0 auto;
-      padding: 26px 0 70px;
-    }
+  <p><b>1. Class</b><br>
+  Class adalah blueprint atau cetakan untuk membuat objek.
+  Class berisi atribut (data) dan method (fungsi).</p>
 
-    /* Header */
-    .hero{
-      border:1px solid var(--stroke);
-      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border-radius: var(--r2);
-      padding: 22px 18px;
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(560px 220px at 12% 20%, rgba(123,97,255,.30), transparent 55%),
-        radial-gradient(560px 220px at 92% 30%, rgba(24,214,255,.18), transparent 55%),
-        radial-gradient(560px 260px at 50% 100%, rgba(255,72,195,.12), transparent 60%);
-      filter: blur(10px);
-      opacity:.95;
-      z-index:0;
-    }
-    .hero > *{position:relative; z-index:1}
-    .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:9px 12px;
-      border-radius:999px;
-      border:1px solid var(--stroke);
-      background: rgba(0,0,0,.18);
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.1));
-      box-shadow: 0 0 0 6px rgba(123,97,255,.16);
-    }
-    h1{
-      margin:10px 0 6px;
-      font-size: clamp(22px, 2.2vw + 12px, 38px);
-      line-height:1.05;
-      letter-spacing:-.02em;
-    }
-    .sub{
-      margin:0;
-      color: var(--muted);
-      line-height:1.65;
-      font-size: 14.5px;
-      max-width: 78ch;
-    }
+  <p><b>2. Object</b><br>
+  Object adalah instance atau hasil nyata dari sebuah class.
+  Object memiliki data dan dapat menjalankan method yang ada di dalam class.</p>
 
-    /* Sections */
-    .section{
-      margin-top: 14px;
-      border:1px solid var(--stroke);
-      background: rgba(255,255,255,.05);
-      border-radius: var(--r2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .section .head{
-      padding: 16px 16px 0;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .section h2{
-      margin:0;
-      font-size: 16px;
-      letter-spacing:-.01em;
-    }
-    .section p{
-      margin:6px 0 0;
-      color: var(--muted);
-      font-size: 13.6px;
-      line-height:1.6;
-    }
-    .body{ padding: 14px 16px 16px; }
-    .hr{height:1px; background: rgba(255,255,255,.10); margin: 12px 0 14px;}
+  <p><b>3. Constructor</b><br>
+  Constructor adalah method khusus yang dipanggil saat objek dibuat.
+  Constructor digunakan untuk menginisialisasi nilai atribut.</p>
 
-    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      color: var(--muted);
-      font-size: 12.5px;
-    }
+  <p><b>4. Encapsulation</b><br>
+  Encapsulation adalah teknik menyembunyikan data agar tidak bisa
+  diakses langsung dari luar class. Biasanya menggunakan private
+  variable dan method getter/setter.</p>
 
-    /* Program row */
-    .prog{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      border-radius: 18px;
-      padding: 14px;
-      margin-top: 10px;
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      color: var(--muted);
-      font-size: 12.5px;
-    }
-    .prog h3{margin:10px 0 6px; font-size: 15.2px}
-    .prog .desc{margin:0 0 12px; color: var(--muted); font-size: 13.4px; line-height:1.6}
-    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .btn{
-      appearance:none;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 13px;
-      cursor:pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.26);}
-    .btn.secondary{background: rgba(0,0,0,.18); color: var(--muted); border-color: rgba(255,255,255,.14);}
-    .idline{color: var(--muted2); font-size: 12.5px}
+  <p><b>5. Abstraction</b><br>
+  Abstraction adalah penyederhanaan kompleksitas dengan hanya
+  menampilkan bagian penting dari suatu objek.</p>
 
-    /* Materi list */
-    ul{margin:0; padding-left: 18px; color: var(--muted); line-height:1.75; font-size: 13.5px}
-    li{margin:6px 0}
+  <p><b>6. Inheritance</b><br>
+  Inheritance adalah pewarisan sifat dari satu class ke class lain
+  agar kode bisa digunakan kembali.</p>
 
-    footer{
-      margin-top: 14px;
-      text-align:center;
-      color: var(--muted2);
-      font-size: 12.5px;
-    }
-
-    /* Modal */
-    .modal{
-      position:fixed; inset:0;
-      display:none; place-items:center;
-      padding: 18px;
-      background: rgba(0,0,0,.62);
-      backdrop-filter: blur(10px);
-      z-index:999;
-    }
-    .modal.show{display:grid}
-    .modal-card{
-      width: min(1100px, 96vw);
-      height: min(720px, 86vh);
-      border-radius: 22px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(10,14,26,.72);
-      box-shadow: 0 30px 120px rgba(0,0,0,.55);
-      display:flex;
-      flex-direction:column;
-    }
-    .modal-top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      padding: 12px 12px;
-      border-bottom:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-    }
-    .modal-title{display:flex; gap:10px; align-items:center; min-width:0}
-    .modal-title strong{
-      font-size: 13.5px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      max-width: 62vw;
-    }
-    .hint{font-size: 12px; color: var(--muted2); white-space:nowrap}
-    .iconbtn{
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.18);
-      color: var(--text);
-      padding: 9px 10px;
-      border-radius: 12px;
-      cursor:pointer;
-      font-weight:900;
-      font-size: 13px;
-    }
-    .iconbtn:hover{background: rgba(0,0,0,.28)}
-    iframe{flex:1; width:100%; border:0; background:#0b1020}
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <section class="hero">
-      <div class="badge"><span class="dot"></span> Tugas OOP Dart • Sesi 1</div>
-      <h1>Marsya Dwi Lintang</h1>
-      <p class="sub">
-        NIM <b>251410028</b> • Kelas <b>SI2A</b><br>
-        Web ini berisi ringkasan materi OOP dari slide (tanpa bagian 7–9) dan demo interaktif melalui DartPad (popup).
-      </p>
-      <div class="chips">
-        <span class="chip">Object</span>
-        <span class="chip">Class</span>
-        <span class="chip">Atribut</span>
-        <span class="chip">Metode</span>
-        <span class="chip">Imperatif vs OOP</span>
-        <span class="chip">Constructor</span>
-        <span class="chip">this</span>
-      </div>
-    </section>
-
-    <!-- MATERI (tanpa 7–9) -->
-    <section class="section">
-      <div class="head">
-        <div>
-          <h2>Ringkasan Materi OOP (Tanpa 7–9)</h2>
-          <p>Poin penting: pengantar OOP, konsep objek & kelas, serta dasar class di Dart.</p>
-        </div>
-      </div>
-      <div class="body">
-        <div class="hr"></div>
-
-        <h3 style="margin:0 0 8px; font-size:15px">A. Pengantar OOP</h3>
-        <ul>
-          <li>OOP = paradigma yang fokus pada <b>objek</b> sebagai unit utama.</li>
-          <li>Objek memiliki <b>state</b> (data) dan <b>behavior</b> (perilaku/metode).</li>
-          <li>Tujuan: program lebih modular, reusable, dan mudah dirawat.</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h3 style="margin:0 0 8px; font-size:15px">B. Objek, Kelas, Atribut, Metode</h3>
-        <ul>
-          <li><b>Kelas</b> = blueprint/cetakan; <b>Objek</b> = instance nyata.</li>
-          <li><b>Atribut</b> = variabel pada class (contoh: warna/model).</li>
-          <li><b>Metode</b> = fungsi pada class (contoh: start()/stop()).</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h3 style="margin:0 0 8px; font-size:15px">C. Imperatif vs OOP</h3>
-        <ul>
-          <li>Imperatif: fokus langkah prosedural.</li>
-          <li>OOP: fokus interaksi objek untuk menyelesaikan masalah.</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h3 style="margin:0 0 8px; font-size:15px">D. OOP di Dart</h3>
-        <ul>
-          <li>Dart mendukung OOP dan sering dipakai di Flutter.</li>
-          <li>OOP membantu struktur kode ketika aplikasi makin kompleks.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- DEMO PROGRAM (style mirip: section berurutan) -->
-    <section class="section">
-      <div class="head">
-        <div>
-          <h2>Demo Program (DartPad)</h2>
-          <p>Klik <b>Lihat DartPad</b> untuk membuka popup. Kalau iframe ga tampil, klik <b>Tab Baru</b> di popup.</p>
-        </div>
-      </div>
-
-      <div class="body">
-        <div class="prog">
-          <span class="tag">Program 1</span>
-          <h3>Link DartPad #1</h3>
-          <p class="desc">Demo dasar OOP (objek/koleksi konsep awal).</p>
-          <div class="row">
-            <button class="btn" data-open="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f">Lihat DartPad</button>
-            <button class="btn secondary" data-copy="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f">Copy Link</button>
-            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f"></span></span>
-          </div>
-        </div>
-
-        <div class="prog">
-          <span class="tag">Program 2</span>
-          <h3>Link DartPad #2</h3>
-          <p class="desc">Latihan class & object (atribut dan method).</p>
-          <div class="row">
-            <button class="btn" data-open="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53">Lihat DartPad</button>
-            <button class="btn secondary" data-copy="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53">Copy Link</button>
-            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53"></span></span>
-          </div>
-        </div>
-
-        <div class="prog">
-          <span class="tag">Program 3</span>
-          <h3>Link DartPad #3</h3>
-          <p class="desc">Perbedaan pola imperatif vs OOP.</p>
-          <div class="row">
-            <button class="btn" data-open="https://dartpad.dev/41fda9435c437a3f47c15042dd752690">Lihat DartPad</button>
-            <button class="btn secondary" data-copy="https://dartpad.dev/41fda9435c437a3f47c15042dd752690">Copy Link</button>
-            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/41fda9435c437a3f47c15042dd752690"></span></span>
-          </div>
-        </div>
-
-        <div class="prog">
-          <span class="tag">Program 4</span>
-          <h3>Link DartPad #4</h3>
-          <p class="desc">Dasar pembuatan class di Dart.</p>
-          <div class="row">
-            <button class="btn" data-open="https://dartpad.dev/869a04612f63d0025867e4f9591444cd">Lihat DartPad</button>
-            <button class="btn secondary" data-copy="https://dartpad.dev/869a04612f63d0025867e4f9591444cd">Copy Link</button>
-            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/869a04612f63d0025867e4f9591444cd"></span></span>
-          </div>
-        </div>
-
-        <div class="prog">
-          <span class="tag">Program 5</span>
-          <h3>Link Dart
+  <p><b>7. Polymorphism</b><br>
+  Polymorphism memungkinkan satu method memiliki banyak bentuk
+  atau perilaku berbeda.</p>
+</div>
