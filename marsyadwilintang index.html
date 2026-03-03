@@ -1,0 +1,194 @@
+class Car {
+  String? model;
+  String? color;
+
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+
+void main() {
+  // Membuat instance (objek) dari class Car
+  Car myCar = Car();
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
+  // Memanggil method start dan stop
+  myCar.start();
+  myCar.stop();
+  // Membuat instance lain
+  Car anotherCar = Car();
+  anotherCar.model = "SUV";
+  anotherCar.color = "Biru";
+  anotherCar.start();
+  anotherCar.stop();
+  print("Model mobil saya: ${myCar.model}, warnanya: ${myCar.color}");
+  print("Model mobil lain: ${anotherCar.model}, warnanya: ${anotherCar.color}");
+}
+==========
+class Car {
+  String? model;
+  String? color;
+  Car(this.model, this.color); // method constructor
+  void start() {
+    print('Car started!');
+  }
+
+  void stop() {
+    print('Car stopped!');
+  }
+}
+
+void main() {
+  Car myCar = Car('Toyota', 'Red');
+  print('model car: ${myCar.model}, color: ${myCar.color}');
+  myCar.start();
+}
+============
+class Mahasiswa {
+  // Atribut
+  String nama;
+  String nim;
+  double ipk;
+
+  // Constructor
+  Mahasiswa(this.nama, this.nim, this.ipk) {
+    // Validasi sederhana untuk IPK (rentang 0.0 - 4.0)
+    if (ipk < 0.0 || ipk > 4.0) {
+      throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
+    }
+  }
+
+  // Metode untuk menampilkan data mahasiswa
+  void tampilkanData() {
+    print('===== Data Mahasiswa =====');
+    print('Nama : $nama');
+    print('NIM  : $nim');
+    print('IPK  : $ipk');
+    print('==========================');
+  }
+
+  // Override toString() untuk keperluan debugging/printing
+  @override
+  String toString() => 'Mahasiswa(nama: $nama, nim: $nim, ipk: $ipk)';
+}
+
+
+void main() {
+  // Membuat objek Mahasiswa
+  Mahasiswa mhs1 = Mahasiswa('Budi Santoso', '20230001', 3.75);
+  Mahasiswa mhs2 = Mahasiswa('Siti Aminah', '20230002', 3.92);
+
+  // Menampilkan data menggunakan metode tampilkanData()
+  mhs1.tampilkanData();
+  mhs2.tampilkanData();
+
+  // Alternatif: menggunakan toString()
+  print(mhs1);
+}
+
+=========
+class Person {
+  String _name;
+  int age;
+  Person(this._name, this.age);
+  void setName(String name) {
+    _name = name;
+  }
+
+  String getName() {
+    return _name;
+  }
+}
+
+void main() {
+  Person person = Person("Salma", 20);
+  print(person.age);
+  // print(person._name); // error karena private
+  person.setName('Aqila');
+  print(person.getName());
+}
+
+===========
+class Product {
+ // String? nama; // harus pakai ? untuk menghindari error karena tdk di inisialisasi
+  String nama;   // Diubah menjadi non-nullable karena selalu diinisialisasi di konstruktor.
+ // Product(String nama) { // cara tidak aman atau kurang baik
+  // this.nama = nama; 
+    //} 
+  Product(this.nama); // cara aman
+}
+
+void main() {
+  // Buat sebuah instance dari kelas Product
+  var product1 = Product('Keyboard Gaming');
+
+  // Akses dan cetak properti 'nama' dari produk
+  print('Produk dibuat: ${product1.nama}');
+}
+
+
+===============
+
+class Produk {
+  // Atribut
+  final String id;
+  final String nama;
+  final double harga;
+  final int stok;
+  final String kategori;
+
+  // 1. Constructor parameterized (default)
+  Produk({
+    required this.id,
+    required this.nama,
+    required this.harga,
+    this.stok = 0,
+    this.kategori = 'Umum',
+  }) ;
+
+
+  // Override toString untuk representasi string
+  @override
+  String toString() =>
+      'Produk(id: $id, nama: $nama, harga: Rp${harga.toStringAsFixed(2)}, '
+      'stok: $stok, kategori: $kategori)';
+}
+
+void main() {
+  // Objek 1: Menggunakan constructor parameterized biasa
+  Produk laptop = Produk(
+    id: 'P001',
+    nama: 'Laptop Gaming',
+    harga: 15000000,
+    stok: 15,
+    kategori: 'Elektronik',
+  );
+
+  // Objek 2: constructor parameterized biasa, kategori tdk ditentukan
+  Produk smartphone = Produk(
+    id: 'P002',
+    nama: 'Smartphone Flagship',
+    harga: 12000000,
+    stok: 25,
+  );
+
+  // Objek 3: constructor parameterized biasa, kategori dan stok tdk ditentukan
+  Produk kamera = Produk(
+    id: 'P003',
+    nama: 'Kamera Mirrorless',
+    harga: 20000000,
+  );
+    // Tampilkan ketiga objek
+  print('=== Daftar Produk ===');
+  print(laptop);
+  print(smartphone);
+  print(kamera);
+}
+
+===========finish
+
+
