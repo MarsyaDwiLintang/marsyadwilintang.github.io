@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tugas OOP Dart - Marsya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -18,6 +18,7 @@
 body{
   background:linear-gradient(135deg,#1e3c72,#2a5298);
   color:white;
+  min-height:100vh;
   padding:20px;
 }
 
@@ -29,57 +30,59 @@ body{
 .card{
   background:rgba(255,255,255,0.1);
   backdrop-filter:blur(15px);
-  padding:35px;
+  padding:30px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-h1{
-  text-align:center;
-  margin-bottom:10px;
-  font-size:28px;
-}
-
-.subtitle{
+.header{
   text-align:center;
   margin-bottom:40px;
+}
+
+.header h1{
+  font-size:30px;
+  font-weight:700;
+}
+
+.header p{
   opacity:0.9;
 }
 
 .section{
-  margin-bottom:35px;
-}
-
-.section h2{
-  margin-bottom:15px;
-  border-left:5px solid #00c6ff;
-  padding-left:10px;
-}
-
-.section p{
-  margin-bottom:12px;
-  line-height:1.6;
-  opacity:0.95;
-}
-
-.program-box{
+  margin-bottom:30px;
+  padding:20px;
   background:rgba(255,255,255,0.15);
-  padding:15px;
-  border-radius:10px;
-  margin-top:10px;
-}
-
-.program-box a{
-  text-decoration:none;
-  background:#00c6ff;
-  padding:7px 15px;
-  border-radius:20px;
-  color:white;
-  font-size:14px;
+  border-radius:15px;
   transition:0.3s;
 }
 
-.program-box a:hover{
+.section:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,0.25);
+}
+
+.section h3{
+  margin-bottom:10px;
+}
+
+.section p{
+  font-size:14px;
+  margin-bottom:15px;
+  opacity:0.9;
+}
+
+.section a{
+  text-decoration:none;
+  background:#00c6ff;
+  padding:8px 15px;
+  border-radius:20px;
+  color:white;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.section a:hover{
   background:#0072ff;
 }
 
@@ -97,92 +100,80 @@ footer{
 <div class="container">
 <div class="card">
 
-<h1>Marsya Dwi Lintang</h1>
-<p class="subtitle">
-NIM: 251410028 <br>
-Tugas Object Oriented Programming (OOP) Menggunakan Dart
-</p>
-
-<!-- PENGERTIAN -->
-<div class="section">
-  <h2>Pengertian Object Oriented Programming (OOP)</h2>
-  <p>
-    Object Oriented Programming (OOP) adalah paradigma pemrograman yang
-    berorientasi pada objek. Dalam OOP, program dibangun menggunakan
-    class dan object yang saling berinteraksi.
-  </p>
-  <p>
-    Tujuan OOP adalah membuat kode lebih terstruktur, mudah dipahami,
-    dapat digunakan kembali (reusable), dan lebih mudah dikembangkan.
-  </p>
+<div class="header">
+  <h1>Marsya Dwi Lintang</h1>
+  <p>NIM: 251410028</p>
+  <p>Tugas OOP (Object Oriented Programming) Menggunakan Dart</p>
 </div>
 
-<!-- KONSEP DASAR -->
+<!-- SECTION 1 -->
 <div class="section">
-  <h2>Konsep Dasar OOP</h2>
-
-  <p><b>1. Class</b> adalah blueprint atau cetakan untuk membuat object.
-  Class berisi atribut (data) dan method (fungsi).</p>
-
-  <p><b>2. Object</b> adalah instance atau hasil nyata dari sebuah class.
-  Object memiliki nilai pada atribut dan dapat menjalankan method.</p>
-
-  <p><b>3. Atribut (Property)</b> adalah data atau karakteristik
-  yang dimiliki oleh sebuah object.</p>
-
-  <p><b>4. Method</b> adalah fungsi atau perilaku yang dapat dilakukan oleh object.</p>
-
-  <p><b>5. Constructor</b> adalah method khusus yang dipanggil
-  saat object dibuat untuk menginisialisasi nilai awal atribut.</p>
-
-  <p><b>6. Encapsulation</b> adalah teknik menyembunyikan data
-  dengan membuat atribut private dan mengaksesnya melalui getter dan setter.</p>
-
-  <p><b>7. Inheritance</b> adalah pewarisan sifat dari satu class ke class lain
-  untuk mengurangi duplikasi kode.</p>
-
-  <p><b>8. Polymorphism</b> adalah kemampuan suatu method memiliki
-  banyak bentuk atau perilaku berbeda.</p>
+  <h3>1. Class Car (Tanpa Constructor)</h3>
+  <p>
+    Program ini menampilkan contoh pembuatan class Car dengan atribut model dan color.
+    Objek dibuat terlebih dahulu kemudian nilai atribut diisi secara manual.
+    Method start() dan stop() digunakan untuk menampilkan aksi mobil.
+  </p>
+  <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
 </div>
 
-<!-- CONTOH PROGRAM -->
+<!-- SECTION 2 -->
 <div class="section">
-  <h2>Contoh Program OOP Menggunakan Dart</h2>
+  <h3>2. Class Car (Dengan Constructor)</h3>
+  <p>
+    Program ini menggunakan constructor untuk langsung mengisi nilai atribut
+    saat objek dibuat. Cara ini lebih ringkas dan efisien dibandingkan
+    mengisi atribut satu per satu.
+  </p>
+  <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
+</div>
 
-  <p><b>1. Class dan Object (Car Tanpa Constructor)</b></p>
-  <div class="program-box">
-    <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
-  </div>
+<!-- SECTION 3 -->
+<div class="section">
+  <h3>3. Class Mahasiswa</h3>
+  <p>
+    Class Mahasiswa memiliki atribut nama, nim, dan ipk.
+    Terdapat validasi IPK agar hanya menerima nilai antara 0.0 sampai 4.0.
+    Method tampilkanData() digunakan untuk menampilkan informasi mahasiswa.
+  </p>
+  <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
+</div>
 
-  <p style="margin-top:20px;"><b>2. Constructor (Car Dengan Constructor)</b></p>
-  <div class="program-box">
-    <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
-  </div>
+<!-- SECTION 4 -->
+<div class="section">
+  <h3>4. Encapsulation (Class Person)</h3>
+  <p>
+    Program ini menunjukkan konsep encapsulation.
+    Variabel _name dibuat private dan hanya dapat diakses
+    melalui method setter dan getter.
+  </p>
+  <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
+</div>
 
-  <p style="margin-top:20px;"><b>3. Class Mahasiswa</b></p>
-  <div class="program-box">
-    <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
-  </div>
+<!-- SECTION 5 -->
+<div class="section">
+  <h3>5. Class Product Sederhana</h3>
+  <p>
+    Class Product menggunakan constructor sederhana untuk
+    menginisialisasi atribut nama.
+    Contoh ini menunjukkan dasar pembuatan objek dalam OOP.
+  </p>
+  <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
+</div>
 
-  <p style="margin-top:20px;"><b>4. Encapsulation (Class Person)</b></p>
-  <div class="program-box">
-    <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
-  </div>
-
-  <p style="margin-top:20px;"><b>5. Constructor Sederhana (Product)</b></p>
-  <div class="program-box">
-    <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
-  </div>
-
-  <p style="margin-top:20px;"><b>6. Named Parameter & Default Value (Produk)</b></p>
-  <div class="program-box">
-    <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
-  </div>
-
+<!-- SECTION 6 -->
+<div class="section">
+  <h3>6. Class Produk (Named Parameter)</h3>
+  <p>
+    Program ini menggunakan named parameter dengan keyword required.
+    Beberapa atribut memiliki nilai default seperti stok dan kategori.
+    Teknik ini membuat constructor lebih fleksibel dan terstruktur.
+  </p>
+  <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
 </div>
 
 <footer>
-© 2026 - Marsya Dwi Lintang
+  © 2026 - Tugas Pemrograman Dart
 </footer>
 
 </div>
