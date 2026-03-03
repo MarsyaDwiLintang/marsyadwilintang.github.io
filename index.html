@@ -1,130 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tugas OOP Dart</title>
+    <title>Tugas OOP Dart - Marsya</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
             margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #eef2f7;
         }
 
-        .container {
-            width: 80%;
-            margin: 40px auto;
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .content {
+            width: 85%;
+            margin: 30px auto;
             background: white;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 5px;
-        }
-
-        h3 {
-            text-align: center;
-            margin-top: 0;
-            color: gray;
-        }
-
-        hr {
-            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         h2 {
-            color: #333;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
         }
 
         p {
-            text-align: justify;
             line-height: 1.7;
+            text-align: justify;
         }
 
         ul {
             line-height: 1.8;
         }
 
-        .section {
-            margin-bottom: 30px;
+        .program {
+            background: #f4f6fa;
+            padding: 15px;
+            border-left: 5px solid #2c3e50;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .footer {
             text-align: center;
-            font-size: 14px;
+            padding: 20px;
             color: gray;
-            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-
+<div class="header">
     <h1>Marsya Dwi Lintang</h1>
-    <h3>NIM: 251410028 | Kelas: SI1A</h3>
+    <p>NIM: 251410028 | Kelas: SI1A</p>
+</div>
 
-    <hr>
+<div class="content">
 
-    <div class="section">
-        <h2>Pengertian Object Oriented Programming (OOP)</h2>
+    <h2>Pengertian Object Oriented Programming (OOP)</h2>
+    <p>
+        Object Oriented Programming (OOP) adalah paradigma pemrograman 
+        yang berorientasi pada objek. Dalam OOP, program dibuat dengan 
+        menggunakan class dan object yang berfungsi untuk mengatur data 
+        serta perilaku. Konsep ini membantu program menjadi lebih 
+        terstruktur, rapi, dan mudah dikembangkan.
+    </p>
+
+    <h2>Konsep Dasar OOP</h2>
+    <ul>
+        <li><b>Class</b> → Template atau cetak biru dalam membuat object.</li>
+        <li><b>Object</b> → Instance dari class.</li>
+        <li><b>Encapsulation</b> → Pembungkusan data dan method dalam satu class.</li>
+        <li><b>Inheritance</b> → Pewarisan sifat dari class induk ke class anak.</li>
+        <li><b>Polymorphism</b> → Satu method memiliki banyak bentuk.</li>
+        <li><b>Abstraction</b> → Penyembunyian detail implementasi.</li>
+    </ul>
+
+    <h2>Penjelasan Program Dart</h2>
+
+    <div class="program">
+        <b>1. Class dan Object</b><br>
+        <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
         <p>
-            Object Oriented Programming (OOP) adalah paradigma pemrograman 
-            yang berorientasi pada objek. Dalam OOP, program dibangun 
-            menggunakan class dan object yang berfungsi untuk 
-            merepresentasikan data serta perilaku. 
-            Tujuan utama OOP adalah membuat program lebih terstruktur, 
-            mudah dipahami, mudah dikembangkan, dan mudah dipelihara.
+            Program ini menunjukkan pembuatan class dan object.
+            Object dibuat dari class dan dapat menjalankan method
+            yang telah didefinisikan.
         </p>
     </div>
 
-    <div class="section">
-        <h2>Konsep Dasar OOP</h2>
-        <ul>
-            <li><b>Class</b> adalah cetak biru atau template untuk membuat object.</li>
-            <li><b>Object</b> adalah hasil atau instance dari sebuah class.</li>
-            <li><b>Encapsulation</b> adalah proses pembungkusan data dan method dalam satu class.</li>
-            <li><b>Inheritance</b> adalah pewarisan sifat dari class induk ke class anak.</li>
-            <li><b>Polymorphism</b> adalah kemampuan method memiliki banyak bentuk.</li>
-            <li><b>Abstraction</b> adalah penyederhanaan kompleksitas dengan menyembunyikan detail tertentu.</li>
-        </ul>
+    <div class="program">
+        <b>2. Constructor</b><br>
+        <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
+        <p>
+            Program ini menggunakan constructor untuk memberikan
+            nilai awal saat object dibuat.
+        </p>
     </div>
 
-    <div class="section">
-        <h2>Penjelasan Program Dart</h2>
-
-        <p><b>1. Program Class dan Object</b><br>
-        Program ini menampilkan pembuatan class dan object. 
-        Object dibuat dari class dan dapat memanggil method 
-        yang ada di dalamnya.</p>
-
-        <p><b>2. Program Constructor</b><br>
-        Program ini menggunakan constructor untuk 
-        menginisialisasi nilai ketika object dibuat.</p>
-
-        <p><b>3. Program Encapsulation</b><br>
-        Program ini menunjukkan penggunaan private variable 
-        untuk melindungi data agar tidak bisa diakses langsung.</p>
-
-        <p><b>4. Program Inheritance</b><br>
-        Program ini menggunakan extends untuk menunjukkan 
-        pewarisan sifat dari class induk ke class anak.</p>
-
-        <p><b>5. Program Polymorphism</b><br>
-        Program ini menampilkan method overriding sebagai 
-        contoh polymorphism.</p>
-
-        <p><b>6. Program Abstraction</b><br>
-        Program ini menggunakan abstract class untuk 
-        menyembunyikan detail implementasi.</p>
-
+    <div class="program">
+        <b>3. Encapsulation</b><br>
+        <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
+        <p>
+            Program ini memperlihatkan penggunaan private variable
+            untuk melindungi data agar tidak bisa diakses langsung.
+        </p>
     </div>
 
-    <div class="footer">
-        © 2026 - Tugas OOP Dart
+    <div class="program">
+        <b>4. Inheritance</b><br>
+        <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
+        <p>
+            Program ini menunjukkan pewarisan sifat menggunakan
+            kata kunci extends.
+        </p>
     </div>
 
+    <div class="program">
+        <b>5. Polymorphism</b><br>
+        <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
+        <p>
+            Program ini menampilkan method overriding sebagai
+            bentuk polymorphism.
+        </p>
+    </div>
+
+    <div class="program">
+        <b>6. Abstraction</b><br>
+        <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
+        <p>
+            Program ini menggunakan abstract class untuk
+            menyembunyikan detail implementasi.
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2026 - Tugas OOP Dart
 </div>
 
 </body>
