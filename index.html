@@ -3,160 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OOP Dart - Marsya Dwi Lintang</title>
+<title>Tugas OOP Dart - Marsya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:#f1f5f9;
 }
+
+body{
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:white;
+  padding:20px;
+}
+
 .container{
-  width:90%;
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
-  padding:30px 0 60px;
-}
-header{
-  text-align:center;
-  margin-bottom:30px;
-}
-header h1{
-  margin:0;
-  font-size:28px;
-}
-header p{
-  margin:5px 0;
-  color:#94a3b8;
 }
 
 .card{
-  background:#1e293b;
-  padding:20px;
-  border-radius:12px;
-  margin-bottom:20px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
-.card h2{
-  margin-top:0;
-  font-size:18px;
+
+h1{
+  text-align:center;
+  margin-bottom:10px;
 }
-.card p{
-  font-size:14px;
+
+.subtitle{
+  text-align:center;
+  margin-bottom:40px;
+  opacity:0.9;
+}
+
+.section{
+  margin-bottom:35px;
+}
+
+.section h2{
+  margin-bottom:10px;
+  border-left:5px solid #00c6ff;
+  padding-left:10px;
+}
+
+.section p{
+  margin-bottom:15px;
   line-height:1.6;
-  color:#cbd5e1;
+  opacity:0.9;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 14px;
-  background:#3b82f6;
-  color:white;
-  border-radius:6px;
+.program{
+  background:rgba(255,255,255,0.15);
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+.program a{
   text-decoration:none;
-  font-size:13px;
-}
-.btn:hover{
-  background:#2563eb;
+  background:#00c6ff;
+  padding:7px 15px;
+  border-radius:20px;
+  color:white;
+  font-size:14px;
+  transition:0.3s;
 }
 
-.id{
-  font-size:12px;
-  color:#94a3b8;
-  margin-top:6px;
+.program a:hover{
+  background:#0072ff;
 }
 
 footer{
   text-align:center;
-  font-size:12px;
-  color:#64748b;
-  margin-top:20px;
+  margin-top:30px;
+  font-size:14px;
+  opacity:0.8;
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
-
-<header>
-  <h1>Marsya Dwi Lintang</h1>
-  <p>NIM 251410028</p>
-  <p>Kelas SI2A</p>
-</header>
-
-<!-- MATERI (TANPA 7,8,9) -->
-
 <div class="card">
-<h2>1. Pengantar OOP</h2>
-<p>
-OOP adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama.
-Objek memiliki state (data) dan behavior (metode).
-Tujuannya agar program lebih modular dan mudah dikembangkan.
-</p>
-<a class="btn" href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Buka DartPad</a>
-<div class="id">ID: a8fdc0d37ab28ad2cb4164cf6ae9029f</div>
+
+<h1>Marsya Dwi Lintang</h1>
+<p class="subtitle">NIM: 251410028<br>Tugas Object Oriented Programming (OOP) Menggunakan Dart</p>
+
+<!-- MATERI OOP -->
+<div class="section">
+  <h2>Pengertian OOP</h2>
+  <p>
+    Object Oriented Programming (OOP) adalah paradigma pemrograman yang
+    menggunakan konsep objek dan class. OOP memudahkan pengelolaan kode
+    agar lebih terstruktur, reusable, dan mudah dikembangkan.
+  </p>
+  <p>
+    Konsep utama dalam OOP meliputi Class, Object, Constructor,
+    Encapsulation, dan Method.
+  </p>
 </div>
 
-<div class="card">
-<h2>2. Objek dan Kelas</h2>
-<p>
-Kelas adalah blueprint atau cetakan untuk membuat objek.
-Objek adalah instance nyata dari sebuah kelas.
-Atribut menyimpan data dan metode berisi fungsi.
-</p>
-<a class="btn" href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Buka DartPad</a>
-<div class="id">ID: a9a36dedb9b2a1fa5f162cbbb9a09a53</div>
+<!-- PROGRAM 1 -->
+<div class="section">
+  <h2>1. Class dan Object (Car Tanpa Constructor)</h2>
+  <p>
+    Contoh ini menunjukkan pembuatan class Car dengan atribut model dan color.
+    Nilai atribut diisi setelah objek dibuat.
+  </p>
+  <div class="program">
+    <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
+  </div>
 </div>
 
-<div class="card">
-<h2>3. Imperatif vs OOP</h2>
-<p>
-Pemrograman imperatif berfokus pada langkah-langkah prosedural.
-OOP berfokus pada objek yang saling berinteraksi untuk menyelesaikan masalah.
-</p>
-<a class="btn" href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Buka DartPad</a>
-<div class="id">ID: 41fda9435c437a3f47c15042dd752690</div>
+<!-- PROGRAM 2 -->
+<div class="section">
+  <h2>2. Constructor</h2>
+  <p>
+    Constructor digunakan untuk menginisialisasi nilai atribut saat objek dibuat.
+    Cara ini lebih efisien dan terstruktur.
+  </p>
+  <div class="program">
+    <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
+  </div>
 </div>
 
-<div class="card">
-<h2>4. Sintaks Dasar Kelas di Dart</h2>
-<p>
-Struktur dasar class di Dart:
-class NamaClass { atribut; metode; }
-Digunakan untuk membuat blueprint objek.
-</p>
-<a class="btn" href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Buka DartPad</a>
-<div class="id">ID: 869a04612f63d0025867e4f9591444cd</div>
+<!-- PROGRAM 3 -->
+<div class="section">
+  <h2>3. Class Mahasiswa</h2>
+  <p>
+    Class ini memiliki atribut nama, nim, dan ipk.
+    Terdapat validasi IPK agar hanya menerima nilai antara 0.0 hingga 4.0.
+  </p>
+  <div class="program">
+    <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
+  </div>
 </div>
 
-<div class="card">
-<h2>5. Membuat Objek dari Kelas</h2>
-<p>
-Objek dibuat dari class menggunakan sintaks:
-NamaClass objek = NamaClass();
-Objek bisa memiliki nilai berbeda walaupun berasal dari class yang sama.
-</p>
-<a class="btn" href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Buka DartPad</a>
-<div class="id">ID: 934d295fc120be9654058f78ba802ea2</div>
+<!-- PROGRAM 4 -->
+<div class="section">
+  <h2>4. Encapsulation</h2>
+  <p>
+    Encapsulation adalah teknik menyembunyikan data dengan membuat atribut private.
+    Akses dilakukan melalui getter dan setter.
+  </p>
+  <div class="program">
+    <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
+  </div>
 </div>
 
-<div class="card">
-<h2>6. Constructor dan this</h2>
-<p>
-Constructor digunakan untuk menginisialisasi nilai saat objek dibuat.
-Keyword this digunakan untuk membedakan atribut class dengan parameter constructor.
-</p>
-<a class="btn" href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Buka DartPad</a>
-<div class="id">ID: c3276ab6b79c7e2fdb172bff675e1fbe</div>
+<!-- PROGRAM 5 -->
+<div class="section">
+  <h2>5. Constructor Sederhana</h2>
+  <p>
+    Contoh dasar penggunaan constructor untuk menginisialisasi atribut dalam class.
+  </p>
+  <div class="program">
+    <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
+  </div>
+</div>
+
+<!-- PROGRAM 6 -->
+<div class="section">
+  <h2>6. Named Parameter dan Default Value</h2>
+  <p>
+    Constructor dengan named parameter memungkinkan pengisian nilai yang lebih fleksibel.
+    Beberapa atribut dapat memiliki nilai default.
+  </p>
+  <div class="program">
+    <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
+  </div>
 </div>
 
 <footer>
-© 2026 - Marsya Dwi Lintang | SI2A
+  © 2026 - Marsya Dwi Lintang
 </footer>
 
 </div>
+</div>
+
 </body>
 </html>
