@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tugas OOP Dart - Marsya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -16,9 +16,9 @@
 }
 
 body{
-  background:linear-gradient(135deg,#1e3c72,#2a5298);
-  color:white;
-  padding:20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding:40px 20px;
 }
 
 .container{
@@ -27,66 +27,79 @@ body{
 }
 
 .card{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(15px);
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  padding:40px;
+  border-radius:25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
 h1{
   text-align:center;
+  font-size:32px;
+  font-weight:700;
   margin-bottom:10px;
 }
 
 .subtitle{
   text-align:center;
-  margin-bottom:40px;
-  opacity:0.9;
+  opacity:0.8;
+  margin-bottom:50px;
+  font-weight:300;
 }
 
 .section{
-  margin-bottom:35px;
-}
-
-.section h2{
-  margin-bottom:10px;
-  border-left:5px solid #00c6ff;
-  padding-left:10px;
-}
-
-.section p{
-  margin-bottom:15px;
-  line-height:1.6;
-  opacity:0.9;
-}
-
-.program{
-  background:rgba(255,255,255,0.15);
-  padding:15px;
-  border-radius:10px;
-  margin-bottom:10px;
-}
-
-.program a{
-  text-decoration:none;
-  background:#00c6ff;
-  padding:7px 15px;
+  margin-bottom:40px;
+  padding:25px;
   border-radius:20px;
-  color:white;
-  font-size:14px;
+  background: rgba(255,255,255,0.05);
   transition:0.3s;
 }
 
+.section:hover{
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.1);
+}
+
+.section h2{
+  margin-bottom:15px;
+  font-weight:600;
+  color:#00e0ff;
+}
+
+.section p{
+  line-height:1.7;
+  opacity:0.9;
+  margin-bottom:10px;
+}
+
+.program{
+  margin-top:15px;
+}
+
+.program a{
+  display:inline-block;
+  text-decoration:none;
+  padding:10px 20px;
+  border-radius:30px;
+  background: linear-gradient(45deg,#00e0ff,#0072ff);
+  color:white;
+  font-size:14px;
+  font-weight:500;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
 .program a:hover{
-  background:#0072ff;
+  transform:scale(1.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.5);
 }
 
 footer{
   text-align:center;
-  margin-top:30px;
+  margin-top:40px;
   font-size:14px;
-  opacity:0.8;
+  opacity:0.6;
 }
 </style>
 </head>
@@ -97,95 +110,79 @@ footer{
 <div class="card">
 
 <h1>Marsya Dwi Lintang</h1>
-<p class="subtitle">NIM: 251410028<br>Tugas Object Oriented Programming (OOP) Menggunakan Dart</p>
+<p class="subtitle">
+NIM: 251410028 <br>
+Tugas Object Oriented Programming (OOP) Menggunakan Dart
+</p>
 
-<!-- MATERI OOP -->
+<!-- PENGERTIAN -->
 <div class="section">
-  <h2>Pengertian OOP</h2>
+  <h2>📘 Pengertian OOP</h2>
   <p>
     Object Oriented Programming (OOP) adalah paradigma pemrograman yang
-    menggunakan konsep objek dan class. OOP memudahkan pengelolaan kode
-    agar lebih terstruktur, reusable, dan mudah dikembangkan.
+    menggunakan konsep objek dan class sebagai dasar pembuatan program.
   </p>
   <p>
-    Konsep utama dalam OOP meliputi Class, Object, Constructor,
-    Encapsulation, dan Method.
+    OOP membantu membuat kode lebih terstruktur, reusable, modular,
+    dan lebih mudah dikembangkan serta dipelihara.
+  </p>
+  <p>
+    Konsep utama OOP meliputi: Class, Object, Constructor,
+    Encapsulation, Inheritance, dan Polymorphism.
   </p>
 </div>
 
-<!-- PROGRAM 1 -->
+<!-- PROGRAM LIST -->
 <div class="section">
-  <h2>1. Class dan Object (Car Tanpa Constructor)</h2>
-  <p>
-    Contoh ini menunjukkan pembuatan class Car dengan atribut model dan color.
-    Nilai atribut diisi setelah objek dibuat.
-  </p>
+  <h2>🚗 1. Class dan Object</h2>
+  <p>Contoh class Car tanpa constructor.</p>
   <div class="program">
     <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
   </div>
 </div>
 
-<!-- PROGRAM 2 -->
 <div class="section">
-  <h2>2. Constructor</h2>
-  <p>
-    Constructor digunakan untuk menginisialisasi nilai atribut saat objek dibuat.
-    Cara ini lebih efisien dan terstruktur.
-  </p>
+  <h2>🏗 2. Constructor</h2>
+  <p>Constructor untuk inisialisasi nilai atribut saat objek dibuat.</p>
   <div class="program">
     <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
   </div>
 </div>
 
-<!-- PROGRAM 3 -->
 <div class="section">
-  <h2>3. Class Mahasiswa</h2>
-  <p>
-    Class ini memiliki atribut nama, nim, dan ipk.
-    Terdapat validasi IPK agar hanya menerima nilai antara 0.0 hingga 4.0.
-  </p>
+  <h2>🎓 3. Class Mahasiswa</h2>
+  <p>Class dengan atribut nama, nim, dan validasi IPK.</p>
   <div class="program">
     <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
   </div>
 </div>
 
-<!-- PROGRAM 4 -->
 <div class="section">
-  <h2>4. Encapsulation</h2>
-  <p>
-    Encapsulation adalah teknik menyembunyikan data dengan membuat atribut private.
-    Akses dilakukan melalui getter dan setter.
-  </p>
+  <h2>🔐 4. Encapsulation</h2>
+  <p>Menyembunyikan atribut private dengan getter dan setter.</p>
   <div class="program">
     <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
   </div>
 </div>
 
-<!-- PROGRAM 5 -->
 <div class="section">
-  <h2>5. Constructor Sederhana</h2>
-  <p>
-    Contoh dasar penggunaan constructor untuk menginisialisasi atribut dalam class.
-  </p>
+  <h2>📦 5. Constructor Sederhana</h2>
+  <p>Contoh penggunaan constructor dasar.</p>
   <div class="program">
     <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
   </div>
 </div>
 
-<!-- PROGRAM 6 -->
 <div class="section">
-  <h2>6. Named Parameter dan Default Value</h2>
-  <p>
-    Constructor dengan named parameter memungkinkan pengisian nilai yang lebih fleksibel.
-    Beberapa atribut dapat memiliki nilai default.
-  </p>
+  <h2>⚙ 6. Named Parameter & Default Value</h2>
+  <p>Constructor dengan parameter fleksibel dan nilai default.</p>
   <div class="program">
     <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
   </div>
 </div>
 
 <footer>
-  © 2026 - Marsya Dwi Lintang
+© 2026 - Marsya Dwi Lintang
 </footer>
 
 </div>
