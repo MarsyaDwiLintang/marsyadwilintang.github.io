@@ -1,195 +1,47 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tugas OOP Dart - Marsya</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-body{
-  background:linear-gradient(135deg,#1e3c72,#2a5298);
-  color:white;
-  padding:20px;
-}
-
-.container{
-  max-width:1000px;
-  margin:auto;
-}
-
-.card{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(15px);
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-h1{
-  text-align:center;
-  margin-bottom:10px;
-}
-
-.subtitle{
-  text-align:center;
-  margin-bottom:40px;
-  opacity:0.9;
-}
-
-.section{
-  margin-bottom:35px;
-}
-
-.section h2{
-  margin-bottom:10px;
-  border-left:5px solid #00c6ff;
-  padding-left:10px;
-}
-
-.section p{
-  margin-bottom:15px;
-  line-height:1.6;
-  opacity:0.9;
-}
-
-.program{
-  background:rgba(255,255,255,0.15);
-  padding:15px;
-  border-radius:10px;
-  margin-bottom:10px;
-}
-
-.program a{
-  text-decoration:none;
-  background:#00c6ff;
-  padding:7px 15px;
-  border-radius:20px;
-  color:white;
-  font-size:14px;
-  transition:0.3s;
-}
-
-.program a:hover{
-  background:#0072ff;
-}
-
-footer{
-  text-align:center;
-  margin-top:30px;
-  font-size:14px;
-  opacity:0.8;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-<div class="card">
-
-<h1>Marsya Dwi Lintang</h1>
-<p class="subtitle">NIM: 251410028<br>Tugas Object Oriented Programming (OOP) Menggunakan Dart</p>
-
 <!-- MATERI OOP -->
 <div class="section">
-  <h2>Pengertian OOP</h2>
+  <h2>Pengertian Object Oriented Programming (OOP)</h2>
   <p>
-    Object Oriented Programming (OOP) adalah paradigma pemrograman yang
-    menggunakan konsep objek dan class. OOP memudahkan pengelolaan kode
-    agar lebih terstruktur, reusable, dan mudah dikembangkan.
+    Object Oriented Programming (OOP) adalah paradigma pemrograman
+    yang berorientasi pada objek. Dalam OOP, program disusun
+    berdasarkan class dan object yang saling berinteraksi.
   </p>
   <p>
-    Konsep utama dalam OOP meliputi Class, Object, Constructor,
-    Encapsulation, dan Method.
+    OOP bertujuan untuk membuat kode lebih terstruktur,
+    mudah dipahami, dapat digunakan kembali (reusable),
+    serta mudah dikembangkan.
   </p>
 </div>
 
-<!-- PROGRAM 1 -->
 <div class="section">
-  <h2>1. Class dan Object (Car Tanpa Constructor)</h2>
-  <p>
-    Contoh ini menunjukkan pembuatan class Car dengan atribut model dan color.
-    Nilai atribut diisi setelah objek dibuat.
-  </p>
-  <div class="program">
-    <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
-  </div>
-</div>
+  <h2>Konsep Dasar OOP</h2>
 
-<!-- PROGRAM 2 -->
-<div class="section">
-  <h2>2. Constructor</h2>
-  <p>
-    Constructor digunakan untuk menginisialisasi nilai atribut saat objek dibuat.
-    Cara ini lebih efisien dan terstruktur.
-  </p>
-  <div class="program">
-    <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
-  </div>
-</div>
+  <p><b>1. Class</b><br>
+  Class adalah blueprint atau cetakan untuk membuat objek.
+  Class berisi atribut (data) dan method (fungsi).</p>
 
-<!-- PROGRAM 3 -->
-<div class="section">
-  <h2>3. Class Mahasiswa</h2>
-  <p>
-    Class ini memiliki atribut nama, nim, dan ipk.
-    Terdapat validasi IPK agar hanya menerima nilai antara 0.0 hingga 4.0.
-  </p>
-  <div class="program">
-    <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
-  </div>
-</div>
+  <p><b>2. Object</b><br>
+  Object adalah instance atau hasil nyata dari sebuah class.
+  Object memiliki data dan dapat menjalankan method yang ada di dalam class.</p>
 
-<!-- PROGRAM 4 -->
-<div class="section">
-  <h2>4. Encapsulation</h2>
-  <p>
-    Encapsulation adalah teknik menyembunyikan data dengan membuat atribut private.
-    Akses dilakukan melalui getter dan setter.
-  </p>
-  <div class="program">
-    <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
-  </div>
-</div>
+  <p><b>3. Constructor</b><br>
+  Constructor adalah method khusus yang dipanggil saat objek dibuat.
+  Constructor digunakan untuk menginisialisasi nilai atribut.</p>
 
-<!-- PROGRAM 5 -->
-<div class="section">
-  <h2>5. Constructor Sederhana</h2>
-  <p>
-    Contoh dasar penggunaan constructor untuk menginisialisasi atribut dalam class.
-  </p>
-  <div class="program">
-    <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
-  </div>
-</div>
+  <p><b>4. Encapsulation</b><br>
+  Encapsulation adalah teknik menyembunyikan data agar tidak bisa
+  diakses langsung dari luar class. Biasanya menggunakan private
+  variable dan method getter/setter.</p>
 
-<!-- PROGRAM 6 -->
-<div class="section">
-  <h2>6. Named Parameter dan Default Value</h2>
-  <p>
-    Constructor dengan named parameter memungkinkan pengisian nilai yang lebih fleksibel.
-    Beberapa atribut dapat memiliki nilai default.
-  </p>
-  <div class="program">
-    <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
-  </div>
-</div>
+  <p><b>5. Abstraction</b><br>
+  Abstraction adalah penyederhanaan kompleksitas dengan hanya
+  menampilkan bagian penting dari suatu objek.</p>
 
-<footer>
-  © 2026 - Marsya Dwi Lintang
-</footer>
+  <p><b>6. Inheritance</b><br>
+  Inheritance adalah pewarisan sifat dari satu class ke class lain
+  agar kode bisa digunakan kembali.</p>
 
+  <p><b>7. Polymorphism</b><br>
+  Polymorphism memungkinkan satu method memiliki banyak bentuk
+  atau perilaku berbeda.</p>
 </div>
-</div>
-
-</body>
-</html>
