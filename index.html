@@ -3,134 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tugas Dart - Marsya</title>
+<title>Tugas OOP Dart - Marsya</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap');
-
-* { box-sizing: border-box; }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
 body{
-  margin:0;
-  min-height:100vh;
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:white;
   display:flex;
   justify-content:center;
   align-items:center;
+  min-height:100vh;
   padding:20px;
-  font-family:Roboto,sans-serif;
-  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-  color:#fff;
+}
+
+.container{
+  width:100%;
+  max-width:900px;
 }
 
 .card{
-  width:100%;
-  max-width:380px;
-  background:rgba(255,255,255,.07);
-  backdrop-filter:blur(12px);
-  padding:24px;
-  border-radius:16px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
   text-align:center;
 }
 
-h2{
-  font-family:Orbitron;
-  color:#ff00ff;
+.header{
+  margin-bottom:30px;
 }
 
-button{
-  width:100%;
-  margin-top:16px;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-family:Orbitron;
-  background:linear-gradient(45deg,#ff00ff,#00ffff);
-  color:white;
+.header h1{
+  font-size:28px;
+  font-weight:700;
 }
 
-img{
-  width:100%;
-  margin-top:20px;
-  border-radius:12px;
+.header p{
+  font-size:16px;
+  opacity:0.9;
 }
 
-/* ===== MODAL (ANTI AUTO OPEN) ===== */
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:15px;
-
-  /* KUNCI */
-  visibility:hidden;
-  opacity:0;
-  pointer-events:none;
-  transition:.2s;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.modal.active{
-  visibility:visible;
-  opacity:1;
-  pointer-events:auto;
+.link-card{
+  background:rgba(255,255,255,0.15);
+  padding:20px;
+  border-radius:15px;
+  transition:0.3s;
 }
 
-.modal-box{
-  width:100%;
-  max-width:900px;
-  background:#111;
-  padding:15px;
-  border-radius:16px;
+.link-card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.25);
 }
 
-.close{
-  text-align:right;
-  cursor:pointer;
-  font-size:22px;
-  color:#ff00ff;
+.link-card h3{
+  margin-bottom:10px;
+  font-size:18px;
 }
 
-iframe{
-  width:100%;
-  height:60vh;
-  border:none;
-  border-radius:12px;
+.link-card a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+  background:#00c6ff;
+  padding:8px 15px;
+  border-radius:20px;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.link-card a:hover{
+  background:#0072ff;
+}
+
+footer{
+  margin-top:30px;
+  font-size:14px;
+  opacity:0.8;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h2>Program Perhitungan Dart</h2>
-  <p>
-    Program ini dibuat menggunakan bahasa Dart
-    untuk melatih pemahaman logika pemrograman.
-  </p>
+<div class="container">
+  <div class="card">
 
-  <button onclick="openModal()">Lihat Source Code</button>
+    <div class="header">
+      <h1>Marsya Dwi Lintang</h1>
+      <p>NIM: 251410028</p>
+      <p>Tugas OOP & Class di Dart</p>
+    </div>
 
-  <img src="output.jpeg" alt="Output Program">
-</div>
+    <div class="grid">
 
-<div id="modal" class="modal" onclick="closeModal()">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="close" onclick="closeModal()">✖</div>
-    <iframe src="https://dartpad.dev/embed-dart.html?id=02a5ebdb057923071d0ed9bc15c70b6f"></iframe>
+      <div class="link-card">
+        <h3>Car (Tanpa Constructor)</h3>
+        <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Code</a>
+      </div>
+
+      <div class="link-card">
+        <h3>Car (Dengan Constructor)</h3>
+        <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Code</a>
+      </div>
+
+      <div class="link-card">
+        <h3>Class Mahasiswa</h3>
+        <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Code</a>
+      </div>
+
+      <div class="link-card">
+        <h3>Encapsulation (Person)</h3>
+        <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Code</a>
+      </div>
+
+      <div class="link-card">
+        <h3>Product Sederhana</h3>
+        <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Code</a>
+      </div>
+
+      <div class="link-card">
+        <h3>Produk (Named Parameter)</h3>
+        <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Code</a>
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 - Tugas Pemrograman Dart
+    </footer>
+
   </div>
 </div>
-
-<script>
-function openModal(){
-  document.getElementById("modal").classList.add("active");
-}
-function closeModal(){
-  document.getElementById("modal").classList.remove("active");
-}
-</script>
 
 </body>
 </html>
