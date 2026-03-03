@@ -1,49 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tugas OOP Dart - Marsya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:white;
+  padding:20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.card{
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:10px;
+  font-size:28px;
+}
+
+.subtitle{
+  text-align:center;
+  margin-bottom:40px;
+  opacity:0.9;
+}
+
+.section{
+  margin-bottom:35px;
+}
+
+.section h2{
+  margin-bottom:15px;
+  border-left:5px solid #00c6ff;
+  padding-left:10px;
+}
+
+.section p{
+  margin-bottom:12px;
+  line-height:1.6;
+  opacity:0.95;
+}
+
+.program-box{
+  background:rgba(255,255,255,0.15);
+  padding:15px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.program-box a{
+  text-decoration:none;
+  background:#00c6ff;
+  padding:7px 15px;
+  border-radius:20px;
+  color:white;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.program-box a:hover{
+  background:#0072ff;
+}
+
+footer{
+  text-align:center;
+  margin-top:30px;
+  font-size:14px;
+  opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Marsya Dwi Lintang</h1>
+<p class="subtitle">
+NIM: 251410028 <br>
+Tugas Object Oriented Programming (OOP) Menggunakan Dart
+</p>
+
+<!-- PENGERTIAN -->
 <div class="section">
-  <h2>Konsep Dasar Object Oriented Programming (OOP)</h2>
-
-  <p><b>1. Class</b><br>
-  Class adalah cetakan atau blueprint untuk membuat objek.
-  Di dalam class terdapat atribut (variabel) dan method (fungsi).
-  Class mendefinisikan bagaimana sebuah objek akan dibuat dan bekerja.
+  <h2>Pengertian Object Oriented Programming (OOP)</h2>
+  <p>
+    Object Oriented Programming (OOP) adalah paradigma pemrograman yang
+    berorientasi pada objek. Dalam OOP, program dibangun menggunakan
+    class dan object yang saling berinteraksi.
   </p>
-
-  <p><b>2. Object</b><br>
-  Object adalah hasil nyata (instance) dari sebuah class.
-  Object memiliki nilai pada atribut dan dapat menjalankan method
-  yang sudah didefinisikan di dalam class.
+  <p>
+    Tujuan OOP adalah membuat kode lebih terstruktur, mudah dipahami,
+    dapat digunakan kembali (reusable), dan lebih mudah dikembangkan.
   </p>
+</div>
 
-  <p><b>3. Atribut (Property)</b><br>
-  Atribut adalah data atau karakteristik yang dimiliki oleh sebuah objek.
-  Contohnya pada class Car terdapat atribut model dan color.
-  </p>
+<!-- KONSEP DASAR -->
+<div class="section">
+  <h2>Konsep Dasar OOP</h2>
 
-  <p><b>4. Method</b><br>
-  Method adalah fungsi atau perilaku yang dimiliki oleh sebuah class.
-  Method menentukan apa yang bisa dilakukan oleh objek.
-  Contohnya start() dan stop().
-  </p>
+  <p><b>1. Class</b> adalah blueprint atau cetakan untuk membuat object.
+  Class berisi atribut (data) dan method (fungsi).</p>
 
-  <p><b>5. Constructor</b><br>
-  Constructor adalah method khusus yang otomatis dipanggil
-  saat objek dibuat. Constructor digunakan untuk
-  menginisialisasi nilai awal atribut.
-  </p>
+  <p><b>2. Object</b> adalah instance atau hasil nyata dari sebuah class.
+  Object memiliki nilai pada atribut dan dapat menjalankan method.</p>
 
-  <p><b>6. Encapsulation</b><br>
-  Encapsulation adalah proses menyembunyikan data agar tidak bisa
-  diakses langsung dari luar class. Biasanya menggunakan
-  private variable dan getter/setter.
-  </p>
+  <p><b>3. Atribut (Property)</b> adalah data atau karakteristik
+  yang dimiliki oleh sebuah object.</p>
 
-  <p><b>7. Inheritance</b><br>
-  Inheritance adalah pewarisan sifat dari satu class ke class lain.
-  Dengan inheritance, kita bisa menggunakan kembali kode yang sudah ada.
-  </p>
+  <p><b>4. Method</b> adalah fungsi atau perilaku yang dapat dilakukan oleh object.</p>
 
-  <p><b>8. Polymorphism</b><br>
-  Polymorphism adalah kemampuan suatu method memiliki banyak bentuk
-  atau perilaku berbeda tergantung konteks penggunaannya.
-  </p>
+  <p><b>5. Constructor</b> adalah method khusus yang dipanggil
+  saat object dibuat untuk menginisialisasi nilai awal atribut.</p>
+
+  <p><b>6. Encapsulation</b> adalah teknik menyembunyikan data
+  dengan membuat atribut private dan mengaksesnya melalui getter dan setter.</p>
+
+  <p><b>7. Inheritance</b> adalah pewarisan sifat dari satu class ke class lain
+  untuk mengurangi duplikasi kode.</p>
+
+  <p><b>8. Polymorphism</b> adalah kemampuan suatu method memiliki
+  banyak bentuk atau perilaku berbeda.</p>
+</div>
+
+<!-- CONTOH PROGRAM -->
+<div class="section">
+  <h2>Contoh Program OOP Menggunakan Dart</h2>
+
+  <p><b>1. Class dan Object (Car Tanpa Constructor)</b></p>
+  <div class="program-box">
+    <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
+  </div>
+
+  <p style="margin-top:20px;"><b>2. Constructor (Car Dengan Constructor)</b></p>
+  <div class="program-box">
+    <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
+  </div>
+
+  <p style="margin-top:20px;"><b>3. Class Mahasiswa</b></p>
+  <div class="program-box">
+    <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
+  </div>
+
+  <p style="margin-top:20px;"><b>4. Encapsulation (Class Person)</b></p>
+  <div class="program-box">
+    <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
+  </div>
+
+  <p style="margin-top:20px;"><b>5. Constructor Sederhana (Product)</b></p>
+  <div class="program-box">
+    <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
+  </div>
+
+  <p style="margin-top:20px;"><b>6. Named Parameter & Default Value (Produk)</b></p>
+  <div class="program-box">
+    <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
+  </div>
 
 </div>
+
+<footer>
+© 2026 - Marsya Dwi Lintang
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
