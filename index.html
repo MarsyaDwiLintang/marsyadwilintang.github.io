@@ -1,48 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OOP Dart — Marsya Dwi Lintang (251410028) SI2A</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg0:#070A12;
-      --bg1:#0B1020;
+      --bg:#0b1020;
+      --bg2:#090d18;
       --card: rgba(255,255,255,.06);
       --stroke: rgba(255,255,255,.14);
-      --text:#EAF0FF;
-      --muted: rgba(234,240,255,.72);
-      --muted2: rgba(234,240,255,.56);
+      --text:#eef3ff;
+      --muted: rgba(238,243,255,.72);
+      --muted2: rgba(238,243,255,.55);
       --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r: 18px;
-      --r2: 26px;
+      --r:18px;
+      --r2:24px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(123,97,255,.35), transparent 55%),
-        radial-gradient(900px 600px at 85% 18%, rgba(24,214,255,.25), transparent 55%),
-        radial-gradient(900px 600px at 50% 95%, rgba(255,72,195,.18), transparent 50%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        radial-gradient(1000px 600px at 18% 10%, rgba(123,97,255,.28), transparent 55%),
+        radial-gradient(900px 600px at 85% 15%, rgba(24,214,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 55% 95%, rgba(255,72,195,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
       overflow-x:hidden;
     }
-    a{color:inherit; text-decoration:none}
-    .container{
-      width:min(1100px, 92vw);
-      margin-inline:auto;
-      padding: 28px 0 70px;
+    .wrap{
+      width:min(980px, 92vw);
+      margin: 0 auto;
+      padding: 26px 0 70px;
     }
 
-    /* Hero */
+    /* Header */
     .hero{
       border:1px solid var(--stroke);
       background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
@@ -52,26 +50,21 @@
       position:relative;
       overflow:hidden;
     }
-    .hero::before{
+    .hero:before{
       content:"";
       position:absolute; inset:-2px;
       background:
-        radial-gradient(560px 220px at 15% 20%, rgba(123,97,255,.35), transparent 55%),
-        radial-gradient(520px 220px at 90% 30%, rgba(24,214,255,.22), transparent 55%),
-        radial-gradient(520px 260px at 50% 100%, rgba(255,72,195,.16), transparent 60%);
+        radial-gradient(560px 220px at 12% 20%, rgba(123,97,255,.30), transparent 55%),
+        radial-gradient(560px 220px at 92% 30%, rgba(24,214,255,.18), transparent 55%),
+        radial-gradient(560px 260px at 50% 100%, rgba(255,72,195,.12), transparent 60%);
       filter: blur(10px);
       opacity:.95;
       z-index:0;
     }
-    .hero-inner{
-      position:relative; z-index:1;
-      display:flex; gap:14px;
-      align-items:flex-start; justify-content:space-between;
-      flex-wrap:wrap;
-    }
+    .hero > *{position:relative; z-index:1}
     .badge{
       display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px;
+      padding:9px 12px;
       border-radius:999px;
       border:1px solid var(--stroke);
       background: rgba(0,0,0,.18);
@@ -81,36 +74,84 @@
     .dot{
       width:10px;height:10px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.1));
-      box-shadow: 0 0 0 6px rgba(123,97,255,.18);
+      box-shadow: 0 0 0 6px rgba(123,97,255,.16);
     }
     h1{
-      margin: 10px 0 6px;
-      font-size: clamp(22px, 2.3vw + 12px, 40px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      margin:10px 0 6px;
+      font-size: clamp(22px, 2.2vw + 12px, 38px);
+      line-height:1.05;
+      letter-spacing:-.02em;
     }
-    .subtitle{
+    .sub{
       margin:0;
       color: var(--muted);
+      line-height:1.65;
       font-size: 14.5px;
-      line-height:1.6;
-      max-width: 75ch;
+      max-width: 78ch;
     }
-    .actions{
-      display:flex; gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-      align-items:center;
-    }
-    .pill{
-      padding:9px 12px;
-      border-radius: 999px;
+
+    /* Sections */
+    .section{
+      margin-top: 14px;
       border:1px solid var(--stroke);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-size: 13px;
-      white-space:nowrap;
+      background: rgba(255,255,255,.05);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
+    .section .head{
+      padding: 16px 16px 0;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .section h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing:-.01em;
+    }
+    .section p{
+      margin:6px 0 0;
+      color: var(--muted);
+      font-size: 13.6px;
+      line-height:1.6;
+    }
+    .body{ padding: 14px 16px 16px; }
+    .hr{height:1px; background: rgba(255,255,255,.10); margin: 12px 0 14px;}
+
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    /* Program row */
+    .prog{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      border-radius: 18px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .prog h3{margin:10px 0 6px; font-size: 15.2px}
+    .prog .desc{margin:0 0 12px; color: var(--muted); font-size: 13.4px; line-height:1.6}
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
     .btn{
       appearance:none;
       border:1px solid rgba(255,255,255,.18);
@@ -125,87 +166,18 @@
     }
     .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.26);}
     .btn.secondary{background: rgba(0,0,0,.18); color: var(--muted); border-color: rgba(255,255,255,.14);}
-
-    /* Chips */
-    .chips{
-      margin-top: 14px;
-      display:flex; gap:10px;
-      flex-wrap:wrap;
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      color: var(--muted);
-      font-size: 12.5px;
-    }
-
-    /* Layout */
-    .grid{
-      margin-top: 16px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 14px;
-    }
-    @media (max-width: 960px){ .grid{grid-template-columns: 1fr} .actions{justify-content:flex-start} }
-
-    .card{
-      border:1px solid var(--stroke);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      border-radius: var(--r2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .card-head{ padding: 16px 16px 0; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-    .card-title{ margin: 0; font-size: 16px; letter-spacing:-0.01em; }
-    .card-sub{ margin: 6px 0 0; color: var(--muted); font-size: 13.5px; line-height:1.55; }
-    .card-body{ padding: 14px 16px 16px; }
-    .hr{ height:1px; background: rgba(255,255,255,.10); margin: 12px 0 14px; }
-
-    /* Program list */
-    .programs{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
-    @media (max-width: 780px){ .programs{grid-template-columns: 1fr} }
-    .program{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      border-radius: 18px;
-      padding: 14px;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-      position:relative;
-      overflow:hidden;
-    }
-    .program:hover{ transform: translateY(-2px); border-color: rgba(255,255,255,.22); background: rgba(0,0,0,.24); }
-    .program::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(380px 120px at 25% 10%, rgba(123,97,255,.20), transparent 60%);
-      opacity:.9;
-      z-index:0;
-    }
-    .program > *{position:relative; z-index:1}
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      color: var(--muted);
-      font-size: 12.5px;
-    }
-    .program h3{ margin: 10px 0 6px; font-size: 15.5px; letter-spacing:-0.01em; }
-    .program p{ margin:0 0 10px; color: var(--muted); font-size: 13.3px; line-height:1.55; }
-    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; }
-    .meta-line{ margin-top:10px; color: var(--muted2); font-size: 12.5px; }
+    .idline{color: var(--muted2); font-size: 12.5px}
 
     /* Materi list */
-    .list{ margin:0; padding-left: 18px; color: var(--muted); line-height:1.7; font-size: 13.5px; }
-    .list li{ margin:6px 0; }
-    .smallnote{ color: var(--muted2); font-size: 12.5px; line-height:1.6; margin-top:10px; }
+    ul{margin:0; padding-left: 18px; color: var(--muted); line-height:1.75; font-size: 13.5px}
+    li{margin:6px 0}
 
-    /* Footer */
-    footer{ margin-top: 16px; color: var(--muted2); font-size: 12.5px; text-align:center; }
+    footer{
+      margin-top: 14px;
+      text-align:center;
+      color: var(--muted2);
+      font-size: 12.5px;
+    }
 
     /* Modal */
     .modal{
@@ -235,18 +207,15 @@
       border-bottom:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
     }
-    .modal-title{
-      display:flex; gap:10px; align-items:center;
-      min-width:0;
-    }
+    .modal-title{display:flex; gap:10px; align-items:center; min-width:0}
     .modal-title strong{
       font-size: 13.5px;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      max-width: 60vw;
+      max-width: 62vw;
     }
-    .hint{ font-size: 12px; color: var(--muted2); white-space:nowrap; }
+    .hint{font-size: 12px; color: var(--muted2); white-space:nowrap}
     .iconbtn{
       border:1px solid rgba(255,255,255,.16);
       background: rgba(0,0,0,.18);
@@ -258,326 +227,129 @@
       font-size: 13px;
     }
     .iconbtn:hover{background: rgba(0,0,0,.28)}
-    .frame{ flex:1; width:100%; border:0; background:#0b1020; }
+    iframe{flex:1; width:100%; border:0; background:#0b1020}
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header class="hero" id="top">
-      <div class="hero-inner">
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge"><span class="dot"></span> Tugas OOP Dart • Sesi 1</div>
+      <h1>Marsya Dwi Lintang</h1>
+      <p class="sub">
+        NIM <b>251410028</b> • Kelas <b>SI2A</b><br>
+        Web ini berisi ringkasan materi OOP dari slide (tanpa bagian 7–9) dan demo interaktif melalui DartPad (popup).
+      </p>
+      <div class="chips">
+        <span class="chip">Object</span>
+        <span class="chip">Class</span>
+        <span class="chip">Atribut</span>
+        <span class="chip">Metode</span>
+        <span class="chip">Imperatif vs OOP</span>
+        <span class="chip">Constructor</span>
+        <span class="chip">this</span>
+      </div>
+    </section>
+
+    <!-- MATERI (tanpa 7–9) -->
+    <section class="section">
+      <div class="head">
         <div>
-          <div class="badge"><span class="dot"></span> Tugas OOP Dart • Sesi 1</div>
-          <h1>Marsya Dwi Lintang</h1>
-          <p class="subtitle">
-            NIM <b>251410028</b> • Kelas <b>SI2A</b><br/>
-            Halaman ini merangkum materi OOP dari slide (tanpa Slide 7–9) dan menyediakan demo interaktif lewat DartPad.
-            Klik <b>Run Program</b> untuk membuka DartPad di popup. Kalau iframe tidak muncul (jaringan/DNS), klik <b>Tab Baru</b> di popup.
-          </p>
-
-          <div class="chips" aria-label="Konsep OOP">
-            <span class="chip">Object</span>
-            <span class="chip">Class</span>
-            <span class="chip">Atribut</span>
-            <span class="chip">Metode</span>
-            <span class="chip">Constructor</span>
-            <span class="chip">this</span>
-            <span class="chip">Quiz & Diskusi</span>
-            <span class="chip">Responsive • Modern UI</span>
-          </div>
-        </div>
-
-        <div class="actions">
-          <a class="btn secondary" href="#materi">Ke Materi</a>
-          <a class="btn" href="#programs">Run Program 1</a>
-          <span class="pill">Popup DartPad 🧩</span>
-          <span class="pill">ID Otomatis ✅</span>
+          <h2>Ringkasan Materi OOP (Tanpa 7–9)</h2>
+          <p>Poin penting: pengantar OOP, konsep objek & kelas, serta dasar class di Dart.</p>
         </div>
       </div>
-    </header>
+      <div class="body">
+        <div class="hr"></div>
 
-    <div class="grid">
-      <!-- PROGRAMS -->
-      <section class="card" id="programs">
-        <div class="card-head">
-          <div>
-            <h2 class="card-title">Demo DartPad (6 Program)</h2>
-            <p class="card-sub">Klik <b>Run Program</b> → akan kebuka popup DartPad. Tombol <b>Copy Link</b> buat salin link cepat.</p>
-          </div>
-        </div>
+        <h3 style="margin:0 0 8px; font-size:15px">A. Pengantar OOP</h3>
+        <ul>
+          <li>OOP = paradigma yang fokus pada <b>objek</b> sebagai unit utama.</li>
+          <li>Objek memiliki <b>state</b> (data) dan <b>behavior</b> (perilaku/metode).</li>
+          <li>Tujuan: program lebih modular, reusable, dan mudah dirawat.</li>
+        </ul>
 
-        <div class="card-body">
-          <div class="hr"></div>
+        <div class="hr"></div>
 
-          <div class="programs">
-            <article class="program">
-              <span class="tag">Program 1 • DartPad</span>
-              <h3>Pengantar OOP: Objek sebagai unit utama</h3>
-              <p>Contoh awal untuk memahami objek (state + behavior) dan konsep dasar OOP.</p>
-              <div class="btnrow">
-                <button class="btn" data-open="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f">Run Program</button>
-                <button class="btn secondary" data-copy="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f">Copy Link</button>
-              </div>
-              <div class="meta-line">ID: <span class="id" data-idfor="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f"></span></div>
-            </article>
+        <h3 style="margin:0 0 8px; font-size:15px">B. Objek, Kelas, Atribut, Metode</h3>
+        <ul>
+          <li><b>Kelas</b> = blueprint/cetakan; <b>Objek</b> = instance nyata.</li>
+          <li><b>Atribut</b> = variabel pada class (contoh: warna/model).</li>
+          <li><b>Metode</b> = fungsi pada class (contoh: start()/stop()).</li>
+        </ul>
 
-            <article class="program">
-              <span class="tag">Program 2 • DartPad</span>
-              <h3>Objek & Kelas: blueprint vs instance</h3>
-              <p>Melihat hubungan class sebagai cetakan dan object sebagai instance nyata.</p>
-              <div class="btnrow">
-                <button class="btn" data-open="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53">Run Program</button>
-                <button class="btn secondary" data-copy="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53">Copy Link</button>
-              </div>
-              <div class="meta-line">ID: <span class="id" data-idfor="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53"></span></div>
-            </article>
+        <div class="hr"></div>
 
-            <article class="program">
-              <span class="tag">Program 3 • DartPad</span>
-              <h3>Imperatif vs OOP</h3>
-              <p>Bandingkan langkah prosedural (imperatif) dengan objek yang saling berinteraksi (OOP).</p>
-              <div class="btnrow">
-                <button class="btn" data-open="https://dartpad.dev/41fda9435c437a3f47c15042dd752690">Run Program</button>
-                <button class="btn secondary" data-copy="https://dartpad.dev/41fda9435c437a3f47c15042dd752690">Copy Link</button>
-              </div>
-              <div class="meta-line">ID: <span class="id" data-idfor="https://dartpad.dev/41fda9435c437a3f47c15042dd752690"></span></div>
-            </article>
+        <h3 style="margin:0 0 8px; font-size:15px">C. Imperatif vs OOP</h3>
+        <ul>
+          <li>Imperatif: fokus langkah prosedural.</li>
+          <li>OOP: fokus interaksi objek untuk menyelesaikan masalah.</li>
+        </ul>
 
-            <article class="program">
-              <span class="tag">Program 4 • DartPad</span>
-              <h3>Dasar Kelas di Dart</h3>
-              <p>Bentuk umum class di Dart (properties + method) dengan contoh sederhana.</p>
-              <div class="btnrow">
-                <button class="btn" data-open="https://dartpad.dev/869a04612f63d0025867e4f9591444cd">Run Program</button>
-                <button class="btn secondary" data-copy="https://dartpad.dev/869a04612f63d0025867e4f9591444cd">Copy Link</button>
-              </div>
-              <div class="meta-line">ID: <span class="id" data-idfor="https://dartpad.dev/869a04612f63d0025867e4f9591444cd"></span></div>
-            </article>
+        <div class="hr"></div>
 
-            <article class="program">
-              <span class="tag">Program 5 • DartPad</span>
-              <h3>Membuat Objek dari Kelas</h3>
-              <p>Latihan membuat beberapa instance dari class lalu memanggil method.</p>
-              <div class="btnrow">
-                <button class="btn" data-open="https://dartpad.dev/934d295fc120be9654058f78ba802ea2">Run Program</button>
-                <button class="btn secondary" data-copy="https://dartpad.dev/934d295fc120be9654058f78ba802ea2">Copy Link</button>
-              </div>
-              <div class="meta-line">ID: <span class="id" data-idfor="https://dartpad.dev/934d295fc120be9654058f78ba802ea2"></span></div>
-            </article>
+        <h3 style="margin:0 0 8px; font-size:15px">D. OOP di Dart</h3>
+        <ul>
+          <li>Dart mendukung OOP dan sering dipakai di Flutter.</li>
+          <li>OOP membantu struktur kode ketika aplikasi makin kompleks.</li>
+        </ul>
+      </div>
+    </section>
 
-            <article class="program">
-              <span class="tag">Program 6 • DartPad</span>
-              <h3>Constructor / this (lanjutan sesi)</h3>
-              <p>Contoh penggunaan constructor dan <code>this</code> untuk inisialisasi yang lebih aman.</p>
-              <div class="btnrow">
-                <button class="btn" data-open="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe">Run Program</button>
-                <button class="btn secondary" data-copy="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe">Copy Link</button>
-              </div>
-              <div class="meta-line">ID: <span class="id" data-idfor="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe"></span></div>
-            </article>
-          </div>
-
-          <p class="smallnote">
-            Tips GitHub Pages: pastikan file utama bernama <b>index.html</b> dan repo sudah di-enable Pages.
-          </p>
-        </div>
-      </section>
-
-      <!-- MATERI -->
-      <aside class="card" id="materi">
-        <div class="card-head">
-          <div>
-            <h2 class="card-title">Ringkasan Materi dari Slide (Tanpa Slide 7–9)</h2>
-            <p class="card-sub">Poin penting sesi 1: Pengantar OOP dan dasar kelas di Dart.</p>
-          </div>
-        </div>
-
-        <div class="card-body">
-          <div class="hr"></div>
-
-          <h3 class="card-title" style="margin-top:0">1) Pendahuluan OOP</h3>
-          <ul class="list">
-            <li>OOP adalah paradigma pemrograman yang fokus pada <b>objek</b> sebagai unit utama. :contentReference[oaicite:1]{index=1}</li>
-            <li>Objek punya <b>state</b> (data) dan <b>behavior</b> (perilaku). :contentReference[oaicite:2]{index=2}</li>
-            <li>Tujuan OOP: kode lebih <b>modular</b>, <b>reusable</b>, dan mudah dipelihara. :contentReference[oaicite:3]{index=3}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">2) Objek, Kelas, Atribut, Metode</h3>
-          <ul class="list">
-            <li><b>Objek</b> = instance nyata dari sebuah kelas. :contentReference[oaicite:4]{index=4}</li>
-            <li><b>Kelas</b> = blueprint/cetakan untuk membuat objek. :contentReference[oaicite:5]{index=5}</li>
-            <li><b>Atribut</b> = variabel di dalam kelas (misal: warna, model). :contentReference[oaicite:6]{index=6}</li>
-            <li><b>Metode</b> = fungsi di dalam kelas (misal: start(), stop()). :contentReference[oaicite:7]{index=7}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">3) Imperatif vs OOP</h3>
-          <ul class="list">
-            <li>Imperatif fokus pada langkah prosedural (function, loop, condition). :contentReference[oaicite:8]{index=8}</li>
-            <li>OOP fokus pada objek yang saling berinteraksi. :contentReference[oaicite:9]{index=9}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">4) Mengapa OOP di Dart?</h3>
-          <ul class="list">
-            <li>Dart bahasa multi-paradigm dan mendukung OOP secara native. :contentReference[oaicite:10]{index=10}</li>
-            <li>Flutter sangat bergantung pada OOP. :contentReference[oaicite:11]{index=11}</li>
-            <li>OOP bikin struktur kode lebih rapi untuk aplikasi kompleks. :contentReference[oaicite:12]{index=12}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">5) Sintaks Dasar Kelas di Dart</h3>
-          <ul class="list">
-            <li>Bentuk umum: <code>class NamaClass { properties; method; }</code>. :contentReference[oaicite:13]{index=13}</li>
-            <li>Contoh class <code>Car</code> dengan atribut dan method <code>start()</code> / <code>stop()</code>. :contentReference[oaicite:14]{index=14}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">6) Membuat Objek dari Kelas</h3>
-          <ul class="list">
-            <li>Membuat instance dari class (contoh: <code>Car myCar = Car();</code>). :contentReference[oaicite:15]{index=15}</li>
-            <li>Bisa buat beberapa objek lalu panggil method-nya. :contentReference[oaicite:16]{index=16}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">7) Tipe Constructor (lanjutan sesi)</h3>
-          <ul class="list">
-            <li>Constructor untuk inisialisasi properti objek. :contentReference[oaicite:17]{index=17}</li>
-            <li>Contoh: default constructor, named constructor, parameterized constructor. :contentReference[oaicite:18]{index=18}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">8) This Keyword</h3>
-          <ul class="list">
-            <li><code>this</code> merujuk pada instance saat ini, berguna jika parameter sama dengan atribut. :contentReference[oaicite:19]{index=19}</li>
-            <li>Contoh aman: <code>Product(this.nama)</code> (non-nullable diinisialisasi di konstruktor). :contentReference[oaicite:20]{index=20}</li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 class="card-title">9) Ringkasan Sesi & Quiz</h3>
-          <ul class="list">
-            <li>Ringkasan: OOP fokus pada objek/interaksi; class = blueprint; object = instance; constructor untuk inisialisasi. :contentReference[oaicite:21]{index=21}</li>
-            <li>Quiz: bedakan kelas vs objek, sebutkan keuntungan OOP, buat class Hewan, dan diskusi kapan OOP dipakai. :contentReference[oaicite:22]{index=22}</li>
-          </ul>
-
-          <p class="smallnote">
-            Catatan: Sesuai permintaan, bagian Slide 7–9 tidak dimasukkan ke ringkasan.
-          </p>
-        </div>
-      </aside>
-    </div>
-
-    <footer>
-      © 2026 • Marsya Dwi Lintang (251410028) • SI2A • GitHub Pages
-    </footer>
-  </div>
-
-  <!-- MODAL -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="DartPad Popup">
-      <div class="modal-top">
-        <div class="modal-title">
-          <strong id="modalTitle">DartPad</strong>
-          <span class="hint">Tekan ESC untuk menutup</span>
-        </div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
-          <button class="iconbtn" id="openNewTab" title="Buka di tab baru">Tab Baru ↗</button>
-          <button class="iconbtn" id="closeModal" title="Tutup">Tutup ✕</button>
+    <!-- DEMO PROGRAM (style mirip: section berurutan) -->
+    <section class="section">
+      <div class="head">
+        <div>
+          <h2>Demo Program (DartPad)</h2>
+          <p>Klik <b>Lihat DartPad</b> untuk membuka popup. Kalau iframe ga tampil, klik <b>Tab Baru</b> di popup.</p>
         </div>
       </div>
-      <iframe class="frame" id="modalFrame" src="about:blank" loading="lazy" referrerpolicy="no-referrer"></iframe>
-    </div>
-  </div>
 
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener("click",(e)=>{
-        const href = a.getAttribute("href");
-        const el = document.querySelector(href);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior:"smooth", block:"start"});
-        }
-      });
-    });
+      <div class="body">
+        <div class="prog">
+          <span class="tag">Program 1</span>
+          <h3>Link DartPad #1</h3>
+          <p class="desc">Demo dasar OOP (objek/koleksi konsep awal).</p>
+          <div class="row">
+            <button class="btn" data-open="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f">Lihat DartPad</button>
+            <button class="btn secondary" data-copy="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f">Copy Link</button>
+            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f"></span></span>
+          </div>
+        </div>
 
-    // Helper: extract DartPad ID from URL
-    function dartpadId(url){
-      try{
-        const u = new URL(url);
-        const parts = u.pathname.split("/").filter(Boolean);
-        return parts[0] || url;
-      }catch(_){ return url; }
-    }
+        <div class="prog">
+          <span class="tag">Program 2</span>
+          <h3>Link DartPad #2</h3>
+          <p class="desc">Latihan class & object (atribut dan method).</p>
+          <div class="row">
+            <button class="btn" data-open="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53">Lihat DartPad</button>
+            <button class="btn secondary" data-copy="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53">Copy Link</button>
+            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53"></span></span>
+          </div>
+        </div>
 
-    // Fill IDs
-    document.querySelectorAll("[data-idfor]").forEach(span=>{
-      const url = span.getAttribute("data-idfor");
-      span.textContent = dartpadId(url);
-    });
+        <div class="prog">
+          <span class="tag">Program 3</span>
+          <h3>Link DartPad #3</h3>
+          <p class="desc">Perbedaan pola imperatif vs OOP.</p>
+          <div class="row">
+            <button class="btn" data-open="https://dartpad.dev/41fda9435c437a3f47c15042dd752690">Lihat DartPad</button>
+            <button class="btn secondary" data-copy="https://dartpad.dev/41fda9435c437a3f47c15042dd752690">Copy Link</button>
+            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/41fda9435c437a3f47c15042dd752690"></span></span>
+          </div>
+        </div>
 
-    // Modal logic
-    const modal = document.getElementById("modal");
-    const frame = document.getElementById("modalFrame");
-    const titleEl = document.getElementById("modalTitle");
-    const btnClose = document.getElementById("closeModal");
-    const btnOpenNew = document.getElementById("openNewTab");
-    let currentUrl = "";
+        <div class="prog">
+          <span class="tag">Program 4</span>
+          <h3>Link DartPad #4</h3>
+          <p class="desc">Dasar pembuatan class di Dart.</p>
+          <div class="row">
+            <button class="btn" data-open="https://dartpad.dev/869a04612f63d0025867e4f9591444cd">Lihat DartPad</button>
+            <button class="btn secondary" data-copy="https://dartpad.dev/869a04612f63d0025867e4f9591444cd">Copy Link</button>
+            <span class="idline">ID: <span class="id" data-idfor="https://dartpad.dev/869a04612f63d0025867e4f9591444cd"></span></span>
+          </div>
+        </div>
 
-    function openModal(url){
-      currentUrl = url;
-      titleEl.textContent = "DartPad • ID: " + dartpadId(url);
-      frame.src = url;
-      modal.classList.add("show");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal(){
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden", "true");
-      frame.src = "about:blank";
-      document.body.style.overflow = "";
-      currentUrl = "";
-    }
-
-    document.querySelectorAll("[data-open]").forEach(btn=>{
-      btn.addEventListener("click", ()=> openModal(btn.getAttribute("data-open")));
-    });
-
-    document.querySelectorAll("[data-copy]").forEach(btn=>{
-      btn.addEventListener("click", async ()=>{
-        const link = btn.getAttribute("data-copy");
-        try{
-          await navigator.clipboard.writeText(link);
-          const old = btn.textContent;
-          btn.textContent = "Copied ✅";
-          setTimeout(()=> btn.textContent = old, 900);
-        }catch(e){
-          prompt("Copy link ini:", link);
-        }
-      });
-    });
-
-    btnClose.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-
-    btnOpenNew.addEventListener("click", ()=>{
-      if(currentUrl) window.open(currentUrl, "_blank", "noopener,noreferrer");
-    });
-
-    window.addEventListener("keydown", (e)=>{
-      if(e.key === "Escape" && modal.classList.contains("show")) closeModal();
-    });
-  </script>
-</body>
-</html>
+        <div class="prog">
+          <span class="tag">Program 5</span>
+          <h3>Link Dart
