@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tugas OOP Dart - Marsya</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -19,16 +18,13 @@
 body{
   background:linear-gradient(135deg,#1e3c72,#2a5298);
   color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   min-height:100vh;
   padding:20px;
 }
 
 .container{
-  width:100%;
-  max-width:900px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .card{
@@ -37,62 +33,61 @@ body{
   padding:30px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
-  text-align:center;
 }
 
 .header{
-  margin-bottom:30px;
+  text-align:center;
+  margin-bottom:40px;
 }
 
 .header h1{
-  font-size:28px;
+  font-size:30px;
   font-weight:700;
 }
 
 .header p{
-  font-size:16px;
   opacity:0.9;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.link-card{
-  background:rgba(255,255,255,0.15);
+.section{
+  margin-bottom:30px;
   padding:20px;
+  background:rgba(255,255,255,0.15);
   border-radius:15px;
   transition:0.3s;
 }
 
-.link-card:hover{
-  transform:translateY(-8px);
+.section:hover{
+  transform:translateY(-5px);
   background:rgba(255,255,255,0.25);
 }
 
-.link-card h3{
+.section h3{
   margin-bottom:10px;
-  font-size:18px;
 }
 
-.link-card a{
+.section p{
+  font-size:14px;
+  margin-bottom:15px;
+  opacity:0.9;
+}
+
+.section a{
   text-decoration:none;
-  color:#fff;
-  font-weight:500;
   background:#00c6ff;
   padding:8px 15px;
   border-radius:20px;
-  display:inline-block;
+  color:white;
+  font-weight:500;
   transition:0.3s;
 }
 
-.link-card a:hover{
+.section a:hover{
   background:#0072ff;
 }
 
 footer{
+  text-align:center;
   margin-top:30px;
   font-size:14px;
   opacity:0.8;
@@ -103,53 +98,85 @@ footer{
 <body>
 
 <div class="container">
-  <div class="card">
+<div class="card">
 
-    <div class="header">
-      <h1>Marsya Dwi Lintang</h1>
-      <p>NIM: 251410028</p>
-      <p>Tugas OOP & Class di Dart</p>
-    </div>
+<div class="header">
+  <h1>Marsya Dwi Lintang</h1>
+  <p>NIM: 251410028</p>
+  <p>Tugas OOP (Object Oriented Programming) Menggunakan Dart</p>
+</div>
 
-    <div class="grid">
+<!-- SECTION 1 -->
+<div class="section">
+  <h3>1. Class Car (Tanpa Constructor)</h3>
+  <p>
+    Program ini menampilkan contoh pembuatan class Car dengan atribut model dan color.
+    Objek dibuat terlebih dahulu kemudian nilai atribut diisi secara manual.
+    Method start() dan stop() digunakan untuk menampilkan aksi mobil.
+  </p>
+  <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
+</div>
 
-      <div class="link-card">
-        <h3>Car (Tanpa Constructor)</h3>
-        <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Code</a>
-      </div>
+<!-- SECTION 2 -->
+<div class="section">
+  <h3>2. Class Car (Dengan Constructor)</h3>
+  <p>
+    Program ini menggunakan constructor untuk langsung mengisi nilai atribut
+    saat objek dibuat. Cara ini lebih ringkas dan efisien dibandingkan
+    mengisi atribut satu per satu.
+  </p>
+  <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
+</div>
 
-      <div class="link-card">
-        <h3>Car (Dengan Constructor)</h3>
-        <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Code</a>
-      </div>
+<!-- SECTION 3 -->
+<div class="section">
+  <h3>3. Class Mahasiswa</h3>
+  <p>
+    Class Mahasiswa memiliki atribut nama, nim, dan ipk.
+    Terdapat validasi IPK agar hanya menerima nilai antara 0.0 sampai 4.0.
+    Method tampilkanData() digunakan untuk menampilkan informasi mahasiswa.
+  </p>
+  <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
+</div>
 
-      <div class="link-card">
-        <h3>Class Mahasiswa</h3>
-        <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Code</a>
-      </div>
+<!-- SECTION 4 -->
+<div class="section">
+  <h3>4. Encapsulation (Class Person)</h3>
+  <p>
+    Program ini menunjukkan konsep encapsulation.
+    Variabel _name dibuat private dan hanya dapat diakses
+    melalui method setter dan getter.
+  </p>
+  <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
+</div>
 
-      <div class="link-card">
-        <h3>Encapsulation (Person)</h3>
-        <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Code</a>
-      </div>
+<!-- SECTION 5 -->
+<div class="section">
+  <h3>5. Class Product Sederhana</h3>
+  <p>
+    Class Product menggunakan constructor sederhana untuk
+    menginisialisasi atribut nama.
+    Contoh ini menunjukkan dasar pembuatan objek dalam OOP.
+  </p>
+  <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
+</div>
 
-      <div class="link-card">
-        <h3>Product Sederhana</h3>
-        <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Code</a>
-      </div>
+<!-- SECTION 6 -->
+<div class="section">
+  <h3>6. Class Produk (Named Parameter)</h3>
+  <p>
+    Program ini menggunakan named parameter dengan keyword required.
+    Beberapa atribut memiliki nilai default seperti stok dan kategori.
+    Teknik ini membuat constructor lebih fleksibel dan terstruktur.
+  </p>
+  <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
+</div>
 
-      <div class="link-card">
-        <h3>Produk (Named Parameter)</h3>
-        <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Code</a>
-      </div>
+<footer>
+  © 2026 - Tugas Pemrograman Dart
+</footer>
 
-    </div>
-
-    <footer>
-      © 2026 - Tugas Pemrograman Dart
-    </footer>
-
-  </div>
+</div>
 </div>
 
 </body>
