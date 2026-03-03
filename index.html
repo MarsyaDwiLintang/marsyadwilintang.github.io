@@ -3,103 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tugas OOP Dart - Marsya</title>
+<title>Marsya Dwi Lintang</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
 body{
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
-  padding:40px 20px;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#111827;
 }
 
 .container{
-  max-width:1000px;
+  max-width:800px;
   margin:auto;
+  padding:60px 20px;
 }
 
-.card{
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(20px);
-  padding:40px;
-  border-radius:25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-}
-
-h1{
+header{
   text-align:center;
+  margin-bottom:50px;
+}
+
+header h1{
+  margin:0;
   font-size:32px;
   font-weight:700;
-  margin-bottom:10px;
 }
 
-.subtitle{
-  text-align:center;
-  opacity:0.8;
-  margin-bottom:50px;
-  font-weight:300;
+header p{
+  margin:6px 0;
+  font-size:14px;
+  color:#6b7280;
 }
 
 .section{
   margin-bottom:40px;
-  padding:25px;
-  border-radius:20px;
-  background: rgba(255,255,255,0.05);
-  transition:0.3s;
-}
-
-.section:hover{
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.1);
 }
 
 .section h2{
-  margin-bottom:15px;
-  font-weight:600;
-  color:#00e0ff;
+  font-size:18px;
+  margin-bottom:10px;
+  border-bottom:2px solid #111827;
+  display:inline-block;
+  padding-bottom:4px;
 }
 
 .section p{
-  line-height:1.7;
-  opacity:0.9;
-  margin-bottom:10px;
-}
-
-.program{
-  margin-top:15px;
-}
-
-.program a{
-  display:inline-block;
-  text-decoration:none;
-  padding:10px 20px;
-  border-radius:30px;
-  background: linear-gradient(45deg,#00e0ff,#0072ff);
-  color:white;
   font-size:14px;
-  font-weight:500;
-  transition:0.3s;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  line-height:1.7;
+  color:#374151;
 }
 
-.program a:hover{
-  transform:scale(1.05);
-  box-shadow:0 8px 20px rgba(0,0,0,0.5);
+.link{
+  display:inline-block;
+  margin-top:8px;
+  font-size:13px;
+  text-decoration:none;
+  color:#2563eb;
+}
+
+.link:hover{
+  text-decoration:underline;
 }
 
 footer{
   text-align:center;
-  margin-top:40px;
-  font-size:14px;
-  opacity:0.6;
+  font-size:12px;
+  color:#9ca3af;
+  margin-top:50px;
 }
 </style>
 </head>
@@ -107,85 +80,199 @@ footer{
 <body>
 
 <div class="container">
-<div class="card">
 
-<h1>Marsya Dwi Lintang</h1>
-<p class="subtitle">
-NIM: 251410028 <br>
-Tugas Object Oriented Programming (OOP) Menggunakan Dart
-</p>
+<header>
+  <h1>Marsya Dwi Lintang</h1>
+  <p>NIM 251410028</p>
+  <p>Kelas SI2A</p>
+</header>
 
-<!-- PENGERTIAN -->
 <div class="section">
-  <h2>📘 Pengertian OOP</h2>
+  <h2>Pengantar OOP</h2>
   <p>
-    Object Oriented Programming (OOP) adalah paradigma pemrograman yang
-    menggunakan konsep objek dan class sebagai dasar pembuatan program.
+  OOP adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama.
+  Objek memiliki atribut (data) dan metode (fungsi).
   </p>
+  <a class="link" href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">
+    Lihat Program →
+  </a>
+</div>
+
+<div class="section">
+  <h2>Objek dan Kelas</h2>
   <p>
-    OOP membantu membuat kode lebih terstruktur, reusable, modular,
-    dan lebih mudah dikembangkan serta dipelihara.
+  Kelas merupakan blueprint untuk membuat objek.
+  Objek adalah instance dari kelas tersebut.
   </p>
+  <a class="link" href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">
+    Lihat Program →
+  </a>
+</div>
+
+<div class="section">
+  <h2>Imperatif vs OOP</h2>
   <p>
-    Konsep utama OOP meliputi: Class, Object, Constructor,
-    Encapsulation, Inheritance, dan Polymorphism.
+  Pemrograman imperatif berfokus pada langkah prosedural,
+  sedangkan OOP berfokus pada interaksi antar objek.
   </p>
-</div>
-
-<!-- PROGRAM LIST -->
-<div class="section">
-  <h2>🚗 1. Class dan Object</h2>
-  <p>Contoh class Car tanpa constructor.</p>
-  <div class="program">
-    <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">Lihat Program</a>
-  </div>
+  <a class="link" href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">
+    Lihat Program →
+  </a>
 </div>
 
 <div class="section">
-  <h2>🏗 2. Constructor</h2>
-  <p>Constructor untuk inisialisasi nilai atribut saat objek dibuat.</p>
-  <div class="program">
-    <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">Lihat Program</a>
-  </div>
-</div>
-
-<div class="section">
-  <h2>🎓 3. Class Mahasiswa</h2>
-  <p>Class dengan atribut nama, nim, dan validasi IPK.</p>
-  <div class="program">
-    <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">Lihat Program</a>
-  </div>
-</div>
-
-<div class="section">
-  <h2>🔐 4. Encapsulation</h2>
-  <p>Menyembunyikan atribut private dengan getter dan setter.</p>
-  <div class="program">
-    <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">Lihat Program</a>
-  </div>
-</div>
-
-<div class="section">
-  <h2>📦 5. Constructor Sederhana</h2>
-  <p>Contoh penggunaan constructor dasar.</p>
-  <div class="program">
-    <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">Lihat Program</a>
-  </div>
-</div>
-
-<div class="section">
-  <h2>⚙ 6. Named Parameter & Default Value</h2>
-  <p>Constructor dengan parameter fleksibel dan nilai default.</p>
-  <div class="program">
-    <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">Lihat Program</a>
-  </div>
+  <h2>Dasar Class di Dart</h2>
+  <p>
+  Struktur dasar class di Dart digunakan untuk mendefinisikan atribut dan metode.
+  </p>
+  <a class="link" href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">
+    Lihat Program →
+  </a>
 </div>
 
 <footer>
-© 2026 - Marsya Dwi Lintang
+  © 2026 Marsya Dwi Lintang - SI2A
 </footer>
 
 </div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marsya Dwi Lintang</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#111827;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+header h1{
+  margin:0;
+  font-size:32px;
+  font-weight:700;
+}
+
+header p{
+  margin:6px 0;
+  font-size:14px;
+  color:#6b7280;
+}
+
+.section{
+  margin-bottom:40px;
+}
+
+.section h2{
+  font-size:18px;
+  margin-bottom:10px;
+  border-bottom:2px solid #111827;
+  display:inline-block;
+  padding-bottom:4px;
+}
+
+.section p{
+  font-size:14px;
+  line-height:1.7;
+  color:#374151;
+}
+
+.link{
+  display:inline-block;
+  margin-top:8px;
+  font-size:13px;
+  text-decoration:none;
+  color:#2563eb;
+}
+
+.link:hover{
+  text-decoration:underline;
+}
+
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#9ca3af;
+  margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <h1>Marsya Dwi Lintang</h1>
+  <p>NIM 251410028</p>
+  <p>Kelas SI2A</p>
+</header>
+
+<div class="section">
+  <h2>Pengantar OOP</h2>
+  <p>
+  OOP adalah paradigma pemrograman yang berfokus pada objek sebagai unit utama.
+  Objek memiliki atribut (data) dan metode (fungsi).
+  </p>
+  <a class="link" href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">
+    Lihat Program →
+  </a>
+</div>
+
+<div class="section">
+  <h2>Objek dan Kelas</h2>
+  <p>
+  Kelas merupakan blueprint untuk membuat objek.
+  Objek adalah instance dari kelas tersebut.
+  </p>
+  <a class="link" href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">
+    Lihat Program →
+  </a>
+</div>
+
+<div class="section">
+  <h2>Imperatif vs OOP</h2>
+  <p>
+  Pemrograman imperatif berfokus pada langkah prosedural,
+  sedangkan OOP berfokus pada interaksi antar objek.
+  </p>
+  <a class="link" href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">
+    Lihat Program →
+  </a>
+</div>
+
+<div class="section">
+  <h2>Dasar Class di Dart</h2>
+  <p>
+  Struktur dasar class di Dart digunakan untuk mendefinisikan atribut dan metode.
+  </p>
+  <a class="link" href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">
+    Lihat Program →
+  </a>
+</div>
+
+<footer>
+  © 2026 Marsya Dwi Lintang - SI2A
+</footer>
+
 </div>
 
 </body>
