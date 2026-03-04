@@ -340,16 +340,13 @@ class Produk {
   final String id, nama;
   final double harga;
 
-  Produk({ required this.id, required this.nama, required this.harga });
+  Produk({ 
+    required this.id, 
+    required this.nama,
+    required this.harga 
+  });
 }
-
-void main() {
-  var p = Produk(id: "p001", nama: "Sepatu", harga: 299000);
-
-  print("ID   : ${p.id}");
-  print("Nama : ${p.nama}");
-  print("Harga: Rp ${p.harga}");
-}  
+        
       </code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe')">Run Program</button>
