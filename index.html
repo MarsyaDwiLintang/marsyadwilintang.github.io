@@ -406,5 +406,35 @@ window.onclick=function(e){
 }
 </script>
 
+<section>
+<h2>Tugas Bonus - Class Hewan</h2>
+
+<pre><code>
+class Hewan {
+  String nama;
+
+  Hewan(this.nama);
+
+  void bersuara() {
+    print("$nama sedang bersuara...");
+  }
+}
+
+void main() {
+  var kucing = Hewan("Kucing");
+  var anjing = Hewan("Anjing");
+
+  kucing.bersuara();
+  anjing.bersuara();
+}
+</code></pre>
+
+<p>
+Penjelasan:
+Class Hewan memiliki atribut nama dan method bersuara().
+Constructor digunakan untuk mengisi nilai nama saat object dibuat.
+</p>
+
+</section>
 </body>
 </html>
