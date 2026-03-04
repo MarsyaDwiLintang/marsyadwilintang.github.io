@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <!-- 
-  =====================================================
-  WEBSITE PROJECT DARTPAD
-  Nama  : Marsya Dwi Lintang
-  NIM   : 251410028
-  Kelas : SI2A
-  =====================================================
-  -->
+  <!-- =====================================================
+       WEBSITE OOP & PROJECT DART
+       Nama  : Marsya Dwi Lintang
+       NIM   : 251410028
+       Kelas : SI2A
+       ===================================================== -->
 
   <!-- Marsya Dwi Lintang | 251410028 | SI2A -->
   <meta charset="UTF-8">
@@ -17,13 +15,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Marsya Dwi Lintang | 251410028 | SI2A -->
-  <title>Portfolio Dart - Marsya</title>
+  <title>OOP & Dart Project - Marsya</title>
 
   <style>
     /* =====================================================
        CSS STYLE
-       Dibuat oleh Marsya Dwi Lintang
-       NIM 251410028 - Kelas SI2A
+       Marsya Dwi Lintang - 251410028 - SI2A
        ===================================================== */
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
@@ -32,13 +29,13 @@
       font-family: 'Poppins', sans-serif;
       background: #0f172a;
       color: white;
+      line-height: 1.6;
     }
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       padding: 20px 50px;
       background: #111827;
       position: sticky;
@@ -46,17 +43,10 @@
     }
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
-    nav h2 {
-      margin: 0;
-      color: #38bdf8;
-    }
-
-    /* Marsya Dwi Lintang | 251410028 | SI2A */
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
-      transition: 0.3s;
     }
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
@@ -65,28 +55,15 @@
     }
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-    }
-
-    /* Marsya Dwi Lintang | 251410028 | SI2A */
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    /* Marsya Dwi Lintang | 251410028 | SI2A */
-    .hero p {
-      opacity: 0.7;
-    }
-
-    /* Marsya Dwi Lintang | 251410028 | SI2A */
-    .projects {
-      padding: 50px 20px;
+    section {
+      padding: 60px 20px;
       max-width: 900px;
       margin: auto;
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    h1, h2 {
+      color: #38bdf8;
     }
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
@@ -96,7 +73,6 @@
       border-radius: 12px;
       margin-bottom: 20px;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
     /* Marsya Dwi Lintang | 251410028 | SI2A */
@@ -117,9 +93,8 @@
       text-align: center;
       padding: 30px;
       background: #111827;
-      margin-top: 50px;
       font-size: 14px;
-      opacity: 0.8;
+      margin-top: 50px;
     }
 
   </style>
@@ -132,70 +107,110 @@
        Marsya Dwi Lintang - 251410028 - SI2A
        ===================================================== -->
   <nav>
-    <h2>MarsyaDev</h2>
+    <div><strong>MarsyaDev</strong></div>
     <div>
-      <a href="#">Home</a>
+      <a href="#pengertian">Pengertian</a>
+      <a href="#konsep">Konsep OOP</a>
       <a href="#project">Project</a>
     </div>
   </nav>
 
   <!-- =====================================================
-       HERO SECTION
+       PENGERTIAN OOP
        Marsya Dwi Lintang - 251410028 - SI2A
        ===================================================== -->
-  <section class="hero">
-    <h1>Portfolio Dart Project</h1>
-    <p>Website ini menampilkan daftar project DartPad yang telah dibuat.</p>
+  <section id="pengertian">
+    <h1>Pengertian OOP</h1>
+    <p>
+      Object Oriented Programming (OOP) adalah metode pemrograman
+      yang berfokus pada objek sebagai dasar dalam pembuatan program.
+      Dalam OOP, program dibangun menggunakan class dan object
+      yang memiliki atribut (data) dan method (fungsi).
+    </p>
   </section>
 
   <!-- =====================================================
-       PROJECT SECTION
+       KONSEP OOP
        Marsya Dwi Lintang - 251410028 - SI2A
        ===================================================== -->
-  <section class="projects" id="project">
+  <section id="konsep">
+    <h2>4 Konsep Utama OOP</h2>
 
-    <!-- Project 1 - Marsya Dwi Lintang | 251410028 | SI2A -->
+    <div class="card">
+      <h3>1. Encapsulation</h3>
+      <p>
+        Encapsulation adalah proses membungkus data dan method
+        dalam satu class serta membatasi akses langsung ke data tersebut.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>2. Inheritance</h3>
+      <p>
+        Inheritance adalah pewarisan sifat dari class induk ke class turunan
+        sehingga kode dapat digunakan kembali tanpa penulisan ulang.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>3. Polymorphism</h3>
+      <p>
+        Polymorphism adalah kemampuan suatu method memiliki banyak bentuk,
+        artinya satu method dapat berjalan dengan cara yang berbeda.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>4. Abstraction</h3>
+      <p>
+        Abstraction adalah proses menyembunyikan detail implementasi
+        dan hanya menampilkan fungsi penting kepada pengguna.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PROJECT DARTPAD
+       Marsya Dwi Lintang - 251410028 - SI2A
+       ===================================================== -->
+  <section id="project">
+    <h2>Daftar Project DartPad</h2>
+
     <div class="card">
       <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">
         DartPad Project 1
       </a>
     </div>
 
-    <!-- Project 2 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">
         DartPad Project 2
       </a>
     </div>
 
-    <!-- Project 3 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">
         DartPad Project 3
       </a>
     </div>
 
-    <!-- Project 4 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">
         DartPad Project 4
       </a>
     </div>
 
-    <!-- Project 5 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">
         DartPad Project 5
       </a>
     </div>
 
-    <!-- Project 6 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">
         DartPad Project 6
       </a>
     </div>
-
   </section>
 
   <!-- =====================================================
@@ -204,7 +219,4 @@
        ===================================================== -->
   <footer>
     © 2026 Marsya Dwi Lintang | NIM 251410028 | SI2A
-  </footer>
-
-</body>
-</html>
+  </
