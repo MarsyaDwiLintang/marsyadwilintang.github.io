@@ -3,160 +3,208 @@
 <head>
   <!-- 
   =====================================================
-  WEBSITE DAFTAR PROJECT DARTPAD
+  WEBSITE PROJECT DARTPAD
   Nama  : Marsya Dwi Lintang
   NIM   : 251410028
   Kelas : SI2A
   =====================================================
-
-  PENJELASAN:
-  File ini dibuat menggunakan HTML dan CSS.
-  HTML digunakan untuk membuat struktur website.
-  CSS digunakan untuk membuat tampilan menjadi modern,
-  menarik, dan responsif.
   -->
 
-  <!-- Mengatur karakter agar terbaca dengan baik -->
+  <!-- Marsya Dwi Lintang | 251410028 | SI2A -->
   <meta charset="UTF-8">
 
-  <!-- Agar website responsif di HP dan Laptop -->
+  <!-- Marsya Dwi Lintang | 251410028 | SI2A -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Judul yang muncul di tab browser -->
-  <title>Daftar Project DartPad - Marsya</title>
+  <!-- Marsya Dwi Lintang | 251410028 | SI2A -->
+  <title>Portfolio Dart - Marsya</title>
 
   <style>
     /* =====================================================
-       STYLE CSS - Dibuat oleh Marsya Dwi Lintang
+       CSS STYLE
+       Dibuat oleh Marsya Dwi Lintang
        NIM 251410028 - Kelas SI2A
        ===================================================== */
 
-    /* Mengatur tampilan dasar halaman */
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
     body {
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
       color: white;
     }
 
-    /* Bagian header (judul utama) */
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #111827;
+      position: sticky;
+      top: 0;
     }
 
-    /* Container untuk membungkus semua card */
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    nav h2 {
+      margin: 0;
+      color: #38bdf8;
     }
 
-    /* Card untuk setiap link DartPad */
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
       transition: 0.3s;
     }
 
-    /* Efek saat mouse diarahkan ke card */
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    nav a:hover {
+      color: #38bdf8;
     }
 
-    /* Style untuk link */
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    .hero p {
+      opacity: 0.7;
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    .projects {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    .card:hover {
+      transform: translateY(-5px);
+      background: #334155;
+    }
+
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
     .card a {
+      color: #38bdf8;
       text-decoration: none;
-      color: #00ffff;
-      font-size: 18px;
       font-weight: bold;
     }
 
-    /* Footer */
-    .footer {
+    /* Marsya Dwi Lintang | 251410028 | SI2A */
+    footer {
       text-align: center;
       padding: 30px;
+      background: #111827;
+      margin-top: 50px;
       font-size: 14px;
       opacity: 0.8;
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- =====================================================
-       BAGIAN HEADER
-       Menampilkan Judul Website
+       NAVBAR
+       Marsya Dwi Lintang - 251410028 - SI2A
        ===================================================== -->
-  <header>
-    Daftar Project DartPad<br>
-    Marsya Dwi Lintang - SI2A
-  </header>
+  <nav>
+    <h2>MarsyaDev</h2>
+    <div>
+      <a href="#">Home</a>
+      <a href="#project">Project</a>
+    </div>
+  </nav>
 
-  <div class="container">
+  <!-- =====================================================
+       HERO SECTION
+       Marsya Dwi Lintang - 251410028 - SI2A
+       ===================================================== -->
+  <section class="hero">
+    <h1>Portfolio Dart Project</h1>
+    <p>Website ini menampilkan daftar project DartPad yang telah dibuat.</p>
+  </section>
 
-    <!-- =====================================================
-         LINK PROJECT 1
-         Dibuat oleh Marsya Dwi Lintang
-         ===================================================== -->
+  <!-- =====================================================
+       PROJECT SECTION
+       Marsya Dwi Lintang - 251410028 - SI2A
+       ===================================================== -->
+  <section class="projects" id="project">
+
+    <!-- Project 1 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/a8fdc0d37ab28ad2cb4164cf6ae9029f" target="_blank">
         DartPad Project 1
       </a>
     </div>
 
-    <!-- LINK PROJECT 2 -->
+    <!-- Project 2 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53" target="_blank">
         DartPad Project 2
       </a>
     </div>
 
-    <!-- LINK PROJECT 3 -->
+    <!-- Project 3 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/41fda9435c437a3f47c15042dd752690" target="_blank">
         DartPad Project 3
       </a>
     </div>
 
-    <!-- LINK PROJECT 4 -->
+    <!-- Project 4 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/869a04612f63d0025867e4f9591444cd" target="_blank">
         DartPad Project 4
       </a>
     </div>
 
-    <!-- LINK PROJECT 5 -->
+    <!-- Project 5 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/934d295fc120be9654058f78ba802ea2" target="_blank">
         DartPad Project 5
       </a>
     </div>
 
-    <!-- LINK PROJECT 6 -->
+    <!-- Project 6 - Marsya Dwi Lintang | 251410028 | SI2A -->
     <div class="card">
       <a href="https://dartpad.dev/c3276ab6b79c7e2fdb172bff675e1fbe" target="_blank">
         DartPad Project 6
       </a>
     </div>
 
-  </div>
+  </section>
 
   <!-- =====================================================
        FOOTER
-       Identitas Pembuat Website
+       Marsya Dwi Lintang - 251410028 - SI2A
        ===================================================== -->
-  <div class="footer">
+  <footer>
     © 2026 Marsya Dwi Lintang | NIM 251410028 | SI2A
-  </div>
+  </footer>
 
 </body>
 </html>
