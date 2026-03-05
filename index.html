@@ -235,8 +235,7 @@ class Car {
     <h2>03. Constructor</h2>
 
     <p>
-      Constructor adalah method khusus dalam class yang otomatis dijalankan saat object dibuat.
-      Pada contoh ini, constructor digunakan untuk menginisialisasi nilai model dan color ketika object Car dibuat.
+    Constructor adalah method atau fungsi khusus dalam pemrograman berorientasi objek (OOP) yang berjalan otomatis saat sebuah objek dibuat (instansiasi).
     </p>
     
     <div class="code-container">
@@ -246,11 +245,16 @@ class Car {
 // Kelas  : SI2A
 
 class Car {
-  String model;
-  String color;
+  String? model;
+  String? color;
 
   Car(this.model, this.color);
-}</code></pre>
+
+  void start() {
+    print('Engine Online: $model');
+  }
+}
+</code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/a9a36dedb9b2a1fa5f162cbbb9a09a53')">Run Program</button>
   </section>
@@ -270,24 +274,29 @@ class Car {
 // NIM    : 251410028
 // Kelas  : SI2A
 
-class Mahasiswa {
+  class Mahasiswa {
   String nama;
   String nim;
   double ipk;
 
   Mahasiswa(this.nama, this.nim, this.ipk);
+
+  void tampilkanData() {
+    print('NAMA : $nama | NIM : $nim | IPK : $ipk');
+  }
+}
+
 }</code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/41fda9435c437a3f47c15042dd752690')">Run Program</button>
   </section>
 
   <section>
-    <h2>05. Constructor Advance</h2>
+    <h2>05. Encapsulation</h2>
 
     <p>
-      Constructor adalah method khusus yang otomatis dijalankan ketika objek dibuat.
-      Fungsinya untuk menginisialisasi nilai awal dari atribut dalam class.
-      Pada contoh ini, constructor tetap digunakan untuk menginisialisasi atribut class.
+     Encapsulation (enkapsulasi) adalah salah satu konsep fundamental dalam Pemrograman Berorientasi Objek (OOP) yang menggabungkan data
+     (variabel) dan fungsi (method) ke dalam satu kesatuan unit (kelas) serta membatasi akses langsung ke komponen internal objek.
     </p>
     
     <div class="code-container">
@@ -296,14 +305,17 @@ class Mahasiswa {
 // NIM    : 251410028
 // Kelas  : SI2A
 
-class Car {
-  String model;
-  String color;
+class Person {
+  String _name;
+  int age;
 
-  Car(this.model, this.color);
+  Person(this._name, this.age);
 
-  void show() => print('Model: $model');
-}</code></pre>
+  void setName(String name) => _name = name;
+  
+  String getName() => _name;
+}
+ </code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/869a04612f63d0025867e4f9591444cd')">Run Program</button>
   </section>
@@ -324,7 +336,7 @@ class Car {
 class Produk {
   String nama;
 
-  Produk(this.nama);
+  Product(this.nama);
 }</code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/934d295fc120be9654058f78ba802ea2')">Run Program</button>
@@ -344,13 +356,18 @@ class Produk {
 class Produk {
   final String id, nama;
   final double harga;
+  final int stok;
+  final String kategori;
 
-  Produk({ 
-    required this.id, 
+  Produk({
+    required this.id,
     required this.nama,
-    required this.harga 
+    required this.harga,
+    this.stok = 0,
+    this.kategori = 'Umum',
   });
 }
+    
         
       </code></pre>
     </div>
