@@ -389,6 +389,44 @@ class Produk {
     </p>
   </section>
 
+   <section>
+    <h2>Tugas Bonus-Class Hewan</h2>
+
+    <p>
+    Class Hewan memiliku atribut nama dan mehod bersuara().
+    Constructor digunakan untuk mengisi nilai nama saat object dibuat
+    </p>
+    
+    <div class="code-container">
+      <div class="code-header">DART SOURCE CODE</div>
+      <pre><code>// Nama   : Marsya Dwi Lintang
+// NIM    : 251410028
+// Kelas  : SI2A
+
+class Hewan {
+  String nama;
+
+  Hewan(this.nama);
+
+  void bersuara() {
+    print("$nama sedang bersuara...");
+  }
+}
+
+void main() {
+  var kucing = Hewan("Kucing");
+  var anjing = Hewan("Anjing");
+
+  kucing.bersuara();
+  anjing.bersuara();
+}
+ </code></pre>
+    </div>
+    <button onclick="openModal('https://dartpad.dev/869a04612f63d0025867e4f9591444cd')">Run Program</button>
+  </section>
+
+  
+
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
