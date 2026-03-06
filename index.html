@@ -284,12 +284,24 @@ void main() {
       <pre><code>// Nama   : Marsya Dwi Lintang
 // NIM    : 251410028
 // Kelas  : SI2A
-        
 
+class Car {
+  String model; 
+  String color;
 
+  Car(this.model, this.color);
 
+  void start() {
+    print('Engine Online: $model'); 
+  }
+}
 
-        
+void main() {
+  Car myCar = Car("Sedan", "Merah");
+
+  myCar.start(); 
+  print(myCar.color); 
+} 
         
 </code></pre>
     </div>
@@ -312,15 +324,23 @@ void main() {
 // Kelas  : SI2A
 
   class Mahasiswa {
-  String nama;
-  String nim;
-  double ipk;
+  String nama; 
+  String nim; 
+  double ipk;  
 
   Mahasiswa(this.nama, this.nim, this.ipk);
 
   void tampilkanData() {
-    print('NAMA : $nama | NIM : $nim | IPK : $ipk');
+    print('Nama : $nama');
+    print('NIM  : $nim');
+    print('IPK  : $ipk');
   }
+}
+
+void main() {
+  Mahasiswa mhs1 = Mahasiswa("Marsya Dwi Lintang", "251410028", 3.90);
+  
+  mhs1.tampilkanData();
 }
 
 </code></pre>
