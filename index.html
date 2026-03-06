@@ -501,22 +501,26 @@ void main() {
       <pre><code>// Nama   : Marsya Dwi Lintang
 // NIM    : 251410028
 // Kelas  : SI2A
-
+        
 class Hewan {
   String nama;
 
+  // Constructor
   Hewan(this.nama);
 
+  // Method
   void bersuara() {
     print("$nama sedang bersuara...");
   }
 }
 
 void main() {
-  var myPet = Hewan("Hamster");
+  var myPet = Hewan("hamster");
+
   print("Nama Hewan: ${myPet.nama}");
   myPet.bersuara();
 }
+        
  </code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/52d2bfe83f09e1b2ca049ec5703cb3db')">Run Program</button>
