@@ -428,9 +428,9 @@ void main() {
 // Kelas  : SI2A
 
 class Produk {
-  final String id, nama;
-  final double harga;
-  final int stok;
+  final String id, nama; 
+  final double harga; 
+  final int stok;   
   final String kategori;
 
   Produk({
@@ -441,7 +441,33 @@ class Produk {
     this.kategori = 'Umum',
   });
 }
-    
+
+void main() {
+  Produk laptop = Produk(
+    id: "P001",
+    nama: "Laptop Gaming",
+    harga: 15000000,
+    stok: 15,
+    kategori: "Elektronik",
+  );
+
+  Produk smartphone = Produk(
+    id: "P002",
+    nama: "Smartphone Flagship",
+    harga: 12000000,
+    stok: 25,
+  );
+
+  Produk kamera = Produk(
+    id: "P003",
+    nama: "Kamera Mirrorless",
+    harga: 20000000,
+  );
+
+  print(laptop.nama); 
+  print(smartphone.nama); 
+  print(kamera.nama); 
+}
         
       </code></pre>
     </div>
