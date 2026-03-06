@@ -253,15 +253,20 @@ void main() {
 // NIM    : 251410028
 // Kelas  : SI2A
         
+class Car {
+  String? model;
+  String? color;
+}
+
 void main() {
   Car myCar = Car();
-  
   myCar.model = "Sedan";
   myCar.color = "Merah";
-
-  myCar.start();
-  myCar.stop();
+  
+  print(myCar.model);
+  print(myCar.color);
 }
+        
 </code></pre>
     </div>
     <button onclick="openModal('https://dartpad.dev/fba24529fe01a2b8adfcc57266f37d70')">Run Program</button>
