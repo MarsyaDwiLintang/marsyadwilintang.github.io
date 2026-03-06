@@ -368,9 +368,21 @@ class Person {
 
   Person(this._name, this.age);
 
-  void setName(String name) => _name = name;
-  
-  String getName() => _name;
+  void setName(String name) {
+    _name = name;
+  }
+
+  String getName() {
+    return _name;
+  }
+}
+
+void main() {
+  Person person = Person("Dwi Mrasya", 19);
+  print(person.age);
+
+  person.setName('Marsya Dwi');
+  print(person.getName());
 }
  </code></pre>
     </div>
