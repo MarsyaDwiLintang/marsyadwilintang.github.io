@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistem Kursus Online Sederhana</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050830;
+color:white;
+padding:40px 20px;
+}
+
+/* HEADER */
+
+header{
+text-align:center;
+margin-bottom:50px;
+}
+
+header h1{
+font-size:42px;
+font-weight:700;
+}
+
+header p{
+opacity:0.8;
+margin-top:10px;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1100px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+background:#151758;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+
+.card h2{
+color:#9bb9d5;
+margin-bottom:10px;
+}
+
+/* TEXT */
+
+.card p{
+line-height:1.7;
+opacity:0.9;
+margin-bottom:10px;
+}
+
+/* LIST */
+
+ul{
+margin-left:20px;
+line-height:1.7;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 14px;
+background:#3c90bd;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#008ecc;
+}
+
+/* POPUP */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup-content{
+width:90%;
+max-width:1200px;
+height:85%;
+background:#111;
+border-radius:12px;
+position:relative;
+overflow:hidden;
+}
+
+.popup iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:18px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+/* CODE BOX */
+
+/* PREVIEW SOURCE CODE */
+
+.code-box{
+background:#000;
+padding:30px;
+border-radius:20px;
+width:100%;
+max-width:650px;
+margin:20px auto;
+box-shadow:0 0 25px rgba(0,255,200,0.3);
+border:3px solid #3df5d4;
+}
+
+/* Judul kotak */
+
+.code-box h3{
+text-align:center;
+margin-bottom:20px;
+color:#ffd56b;
+font-size:18px;
+letter-spacing:1px;
+}
+
+/* Text kode */
+
+pre{
+color:#00ff9d;
+font-family:monospace;
+font-size:15px;
+line-height:1.6;
+
+white-space:pre-wrap;
+word-break:break-word;
+overflow-x:auto;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:30px;
+}
+
+.popup-content{
+height:90%;
+width:95%;
+}
+
+}
+
+<style>
+
+.code-box{
+background:black;
+padding:25px;
+border-radius:20px;
+width:350px;
+margin:auto;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+border:2px solid #25bb66;
+}
+
+.code-box h3{
+color:#ccc;
+text-align:center;
+margin-bottom:15px;
+}
+
+pre{
+color:#00cfff;
+font-family:monospace;
+font-size:14px;
+text-shadow:0 0 5px #00cfff;
+}
+
+.run{
+margin-top:20px;
+background:gold;
+border:none;
+padding:15px 40px;
+border-radius:40px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Sistem Kursus Online Sederhana</h1>
+<p>Marsya Dwi Lintang | 251410028 | SI2A</p>
+<p>Putri Ananda Amelia | 251410029 | SI2A</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Permasalahan</h2>
+<p>Sebuah platform kursus online memiliki banyak siswa, instruktur, dan kelas yang harus dikelola. Jika pencatatan dilakukan secara manual, akan sulit mengetahui siswa yang terdaftar, instruktur yang mengajar, dan kursus yang tersedia. Oleh karena itu, diperlukan sistem yang terstruktur agar pengelolaan data menjadi lebih mudah dan efisien.</p>
+</div>
+
+<div class="card">
+<h2>Mengapa menggunakan OOP?</h2>
+<p>Object Oriented Programming (OOP) digunakan karena sistem terdiri dari beberapa objek yang saling berhubungan, yaitu siswa, instruktur, dan kursus. Dengan OOP, data dan fungsi dapat dikelompokkan ke dalam class yang sesuai sehingga program menjadi lebih rapi, mudah dipahami, dan mudah dikembangkan.</p>
+</div>
+
+<div class="card">
+<h2>Bagaimana cara penyelesaiannya?</h2>
+<p>Penyelesaian dilakukan dengan membuat beberapa class sesuai objek yang ada dalam sistem:</p>
+<ul>
+<li>
+<p>Class Student untuk menyimpan data siswa.</p>
+</li>
+<li>
+<p>Class Instructor untuk menyimpan data instruktur.</p>
+</li>
+<li>
+<p>Class Course untuk menyimpan data kursus.</p>
+</li>
+<li><p>Menggunakan Enkapsulasi untuk melindungi data tertentu.</p></li>
+<li><p>Menggunakan Abstraksi untuk mendefinisikan proses pendaftaran kursus.</p></li>
+<li><p>Menggunakan Inheritance agar class turunan dapat mewarisi atribut dan method dari class induk.</p></li>
+<li><p>Menggunakan Polimorfisme agar method yang sama dapat menghasilkan perilaku yang berbeda</p></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>01. Objek & Class</h2>
+<p>Pada sistem ini terdapat beberapa objek utama yaitu Student, Instructor, dan Course.
+Class Student digunakan untuk menyimpan data siswa berupa nama dan email. Objek student dibuat dari class Student dan dapat menampilkan informasi siswa</p>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
+class Student {
+  String name;
+  String email;
+
+  Student(this.name, this.email);
+
+  void displayInfo() {
+    print("Nama: $name");
+    print("Email: $email");
+  }
+}
+
+void main() {
+  Student student =
+      Student("putri marsya", "putrimarsya1414@gmail.com");
+
+  student.displayInfo();
+}
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/7486cd0c7d13f64d7225c51c404c58df?run=true')">Lihat DartPad</button>
+</div>
+
+<div class="card">
+<h2>02. Enkapsulasi</h2>
+<p>Enkapsulasi digunakan untuk melindungi data agar tidak dapat diakses secara langsung dari luar class.
+Variabel _courseName bersifat private sehingga tidak dapat diakses langsung dari luar class. Data hanya dapat diakses melalui getter dan setter</p>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
+class Course {
+  String _courseName;
+
+  Course(this._courseName);
+
+  String get courseName => _courseName;
+
+  void setCourseName(String name) {
+    _courseName = name;
+  }
+}
+
+void main() {
+  Course course = Course("Pemrograman Dart");
+
+  print(course.courseName);
+
+  course.setCourseName("Flutter Dasar");
+
+  print(course.courseName);
+}
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/da0d0d615b2fde9c903e1a256cedf569?run=true')">Lihat DartPad</button>
+</div>
+
+<div class="card">
+<h2>03. Abstraksi</h2>
+<p>Abstraksi digunakan untuk menyembunyikan detail implementasi dan hanya menampilkan fungsi yang diperlukan.
+Class Enrollment merupakan abstract class yang berisi method register(). Class CourseEnrollment mengimplementasikan method tersebut.</p>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
+abstract class Enrollment {
+  void register();
+}
+
+class CourseEnrollment implements Enrollment {
+  @override
+  void register() {
+    print("Siswa berhasil mendaftar kursus");
+  }
+}
+
+void main() {
+  CourseEnrollment enrollment =
+      CourseEnrollment();
+
+  enrollment.register();
+}
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/7465138fcdc98691013330b1aaad2d3e?run=true')">Lihat DartPad</button>
+
+</div>
+
+<div class="card">
+<h2>04. Inheritance</h2>
+<p>Inheritance digunakan agar suatu class dapat mewarisi atribut dan method dari class lain.
+Class PremiumStudent mewarisi seluruh atribut dan method dari class Student sehingga tidak perlu menulis ulang kode yang sama.</p>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
+class Student {
+  String name;
+
+  Student(this.name);
+
+  void displayInfo() {
+    print("Nama Siswa: $name");
+  }
+}
+
+class PremiumStudent extends Student {
+  PremiumStudent(String name)
+      : super(name);
+}
+
+void main() {
+  PremiumStudent student =
+      PremiumStudent("Putri Marsya");
+
+  student.displayInfo();
+}
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/4e02b9a464984f5c0e5444853d9ab6fb?run=true')">Lihat DartPad</button>
+
+</div>
+
+<div class="card">
+<h2>05. Polimorfisme</h2>
+<p>Polimorfisme memungkinkan method yang sama memiliki perilaku yang berbeda.
+Method displayInfo() pada PremiumStudent menimpa method yang ada pada Student sehingga menghasilkan output yang berbeda.</p>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
+class Student {
+  String name;
+
+  Student(this.name);
+
+  void displayInfo() {
+    print("Siswa: $name");
+  }
+}
+
+class PremiumStudent extends Student {
+  PremiumStudent(String name)
+      : super(name);
+
+  @override
+  void displayInfo() {
+    print("Siswa Premium: $name");
+  }
+}
+
+void main() {
+  Student student1 =
+      Student("Marsya");
+
+  Student student2 =
+      PremiumStudent("Putri");
+
+  student1.displayInfo();
+  student2.displayInfo();
+}
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/3e35f3590fdbda7f09d5546ee980e0e4?run=true')">Lihat DartPad</button>
+</div>
+
+<div class="card">
+<h2>06. Program Lengkap Sistem Kursus Online Sederhana</h2>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
+class Student {
+  String name;
+
+  Student(this.name);
+
+  void displayInfo() {
+    print("Nama Siswa: $name");
+  }
+}
+
+class PremiumStudent extends Student {
+  PremiumStudent(String name)
+      : super(name);
+
+  @override
+  void displayInfo() {
+    print("Siswa Premium: $name");
+  }
+}
+
+class Instructor {
+  String name;
+
+  Instructor(this.name);
+
+  void displayInfo() {
+    print("Instruktur: $name");
+  }
+}
+
+class Course {
+  String courseName;
+
+  Course(this.courseName);
+
+  void displayInfo() {
+    print("Kursus: $courseName");
+  }
+}
+
+void main() {
+  Student student =
+      Student("Marsya");
+
+  PremiumStudent premiumStudent =
+      PremiumStudent("Putri");
+
+  Instructor instructor =
+      Instructor("Pak Alex");
+
+  Course course =
+      Course("Pemrograman Dart");
+
+  student.displayInfo();
+  premiumStudent.displayInfo();
+  instructor.displayInfo();
+  course.displayInfo();
+}
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/81c1c4cf0161fa3d266809867ae6442d?run=true')">Lihat DartPad</button>
+
+</div>
+
+
+<div class="card">
+<h2>Kesimpulann</h2>
+<p>Sistem Kursus Online Sederhana dapat diselesaikan menggunakan OOP karena memiliki beberapa objek yang saling berhubungan, yaitu siswa, instruktur, dan kursus. Dengan menerapkan konsep objek dan class, enkapsulasi, abstraksi, inheritance, dan polimorfisme, program menjadi lebih terstruktur, mudah dipahami, serta mudah dikembangkan untuk kebutuhan yang lebih kompleks di masa depan</p>
+</div>
+
+<!-- POPUP -->
+
+<div id="popup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closePopup()">×</span>
+<iframe id="dartFrame"></iframe>
+</div>
+</div>
+
+<script>
+
+function openPopup(link){
+document.getElementById("popup").style.display="flex";
+document.getElementById("dartFrame").src=link;
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+document.getElementById("dartFrame").src="";
+}
+
+</script>
+
+</body>
+</html>
+ 
