@@ -1,3 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sistem Kursus Online Sederhana</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050830;
+color:white;
+padding:40px 20px;
+}
+
+/* HEADER */
+
+header{
+text-align:center;
+margin-bottom:50px;
+}
+
+header h1{
+font-size:42px;
+font-weight:700;
+}
+
+header p{
+opacity:0.8;
+margin-top:10px;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1100px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+background:#151758;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+
+.card h2{
+color:#9bb9d5;
+margin-bottom:10px;
+}
+
+/* TEXT */
+
+.card p{
+line-height:1.7;
+opacity:0.9;
+margin-bottom:10px;
+}
+
+/* LIST */
+
+ul{
+margin-left:20px;
+line-height:1.7;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 14px;
+background:#3c90bd;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-size:14px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#008ecc;
+}
+
+/* POPUP */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.popup-content{
+width:90%;
+max-width:1200px;
+height:85%;
+background:#111;
+border-radius:12px;
+position:relative;
+overflow:hidden;
+}
+
+.popup iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:18px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+/* CODE BOX */
+
+/* PREVIEW SOURCE CODE */
+
+.code-box{
+background:#000;
+padding:30px;
+border-radius:20px;
+width:100%;
+max-width:650px;
+margin:20px auto;
+box-shadow:0 0 25px rgba(0,255,200,0.3);
+border:3px solid #3df5d4;
+}
+
+/* Judul kotak */
+
+.code-box h3{
+text-align:center;
+margin-bottom:20px;
+color:#ffd56b;
+font-size:18px;
+letter-spacing:1px;
+}
+
+/* Text kode */
+
+pre{
+color:#00ff9d;
+font-family:monospace;
+font-size:15px;
+line-height:1.6;
+
+white-space:pre-wrap;
+word-break:break-word;
+overflow-x:auto;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:30px;
+}
+
+.popup-content{
+height:90%;
+width:95%;
+}
+
+}
+
+<style>
+
+.code-box{
+background:black;
+padding:25px;
+border-radius:20px;
+width:350px;
+margin:auto;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+border:2px solid #25bb66;
+}
+
+.code-box h3{
+color:#ccc;
+text-align:center;
+margin-bottom:15px;
+}
+
+pre{
+color:#00cfff;
+font-family:monospace;
+font-size:14px;
+text-shadow:0 0 5px #00cfff;
+}
+
+.run{
+margin-top:20px;
+background:gold;
+border:none;
+padding:15px 40px;
+border-radius:40px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Sistem Kursus Online Sederhana</h1>
+<p>Marsya Dwi Lintang | 251410028 | SI2A</p>
+<p>Putri Ananda Amelia | 251410029 | SI2A</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Permasalahan</h2>
+<p>Sebuah platform kursus online memiliki banyak siswa, instruktur, dan kelas yang harus dikelola. Jika pencatatan dilakukan secara manual, akan sulit mengetahui siswa yang terdaftar, instruktur yang mengajar, dan kursus yang tersedia. Oleh karena itu, diperlukan sistem yang terstruktur agar pengelolaan data menjadi lebih mudah dan efisien.</p>
+</div>
+
+<div class="card">
+<h2>Mengapa menggunakan OOP?</h2>
+<p>Object Oriented Programming (OOP) digunakan karena sistem terdiri dari beberapa objek yang saling berhubungan, yaitu siswa, instruktur, dan kursus. Dengan OOP, data dan fungsi dapat dikelompokkan ke dalam class yang sesuai sehingga program menjadi lebih rapi, mudah dipahami, dan mudah dikembangkan.</p>
+</div>
+
+<div class="card">
+<h2>Bagaimana cara penyelesaiannya?</h2>
+<p>Penyelesaian dilakukan dengan membuat beberapa class sesuai objek yang ada dalam sistem:</p>
+<ul>
+<li>
+<p>Class Student untuk menyimpan data siswa.</p>
+</li>
+<li>
+<p>Class Instructor untuk menyimpan data instruktur.</p>
+</li>
+<li>
+<p>Class Course untuk menyimpan data kursus.</p>
+</li>
+<li><p>Menggunakan Enkapsulasi untuk melindungi data tertentu.</p></li>
+<li><p>Menggunakan Abstraksi untuk mendefinisikan proses pendaftaran kursus.</p></li>
+<li><p>Menggunakan Inheritance agar class turunan dapat mewarisi atribut dan method dari class induk.</p></li>
+<li><p>Menggunakan Polimorfisme agar method yang sama dapat menghasilkan perilaku yang berbeda</p></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>01. Program Lengkap Sistem Kursus Online Sederhana</h2>
+
+<div class="card">
+<div class="code-box">
+
+<h3>DART SOURCE CODE</h3>
+
+<pre>
 // Nama Anggota Kelompok:
 // Marsya Dwi Lintang (251410028)
 // Putri Ananda Amelia (251410029)
@@ -126,3 +409,50 @@ void main() {
 
   enrollment.register();
 }
+</pre>
+
+</div>
+
+</div>
+<button class="btn" onclick="openPopup('https://dartpad.dev/81c1c4cf0161fa3d266809867ae6442d?run=true')">Lihat DartPad</button>
+
+</div>
+
+<div class="card">
+<h2>KPenjelasan Penggunaan Aplikasi</h2>
+<p>Sistem Kursus Online Sederhana merupakan program berbasis Dart yang dibuat untuk mengelola data siswa, instruktur, dan kursus dengan menerapkan konsep Object Oriented Programming (OOP). Program dijalankan melalui fungsi main() yang menjadi titik awal eksekusi program. Saat program dijalankan, sistem akan membuat data siswa, siswa premium, instruktur, dan kursus berdasarkan objek yang telah dibuat.
+Selanjutnya sistem menampilkan informasi siswa, instruktur, dan kursus yang tersedia. Setelah itu dilakukan proses pendaftaran kursus melalui class CourseEnrollment yang menghubungkan siswa dengan kursus dan instruktur. Output yang dihasilkan berupa informasi siswa, informasi instruktur, informasi kursus, serta status pendaftaran kursus yang berhasil dilakukan.
+Melalui program ini, konsep Objek dan Class, Enkapsulasi, Abstraksi, Inheritance, dan Polimorfisme diterapkan secara terintegrasi dalam satu Sistem Kursus Online Sederhana</p>
+</div>
+
+<div class="card">
+<h2>Kesimpulann</h2>
+<p>Sistem Kursus Online Sederhana dapat diselesaikan menggunakan OOP karena memiliki beberapa objek yang saling berhubungan, yaitu siswa, instruktur, dan kursus. Dengan menerapkan konsep objek dan class, enkapsulasi, abstraksi, inheritance, dan polimorfisme, program menjadi lebih terstruktur, mudah dipahami, serta mudah dikembangkan untuk kebutuhan yang lebih kompleks di masa depan</p>
+</div>
+
+<!-- POPUP -->
+
+<div id="popup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closePopup()">×</span>
+<iframe id="dartFrame"></iframe>
+</div>
+</div>
+
+<script>
+
+function openPopup(link){
+document.getElementById("popup").style.display="flex";
+document.getElementById("dartFrame").src=link;
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+document.getElementById("dartFrame").src="";
+}
+
+</script>
+
+</body>
+</html>
+ 
