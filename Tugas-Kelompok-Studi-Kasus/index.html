@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="id">
 
 <head>
@@ -273,6 +272,26 @@ cursor:pointer;
 </div>
 
 <div class="card">
+<h2>Flowchart</h2>
+<p>Flowchart ini menggambarkan proses pendaftaran kursus online. Proses dimulai dengan pembuatan data siswa (Student atau PremiumStudent), data kursus (Course), dan data instruktur (Instructor). Selanjutnya siswa memilih kursus yang ingin diambil dan sistem menjalankan proses pendaftaran melalui class CourseEnrollment. Sistem akan memeriksa apakah siswa sudah terdaftar pada kursus yang sama dan apakah jumlah kursus yang diambil telah mencapai batas maksimal. Jika salah satu kondisi tidak terpenuhi, pendaftaran akan ditolak. Jika semua syarat terpenuhi, kursus ditambahkan ke daftar kursus siswa dan data pendaftaran disimpan. Setelah proses selesai, sistem menampilkan informasi siswa, kursus yang diambil, serta instruktur yang mengajar.</p>
+    <img src="flowchart.jpg"
+         alt="Flowchart Sistem Kursus Online"
+         style="width:100%; max-width:800px; display:block; margin:auto; border-radius:15px;">
+
+</div>
+
+<div class="card">
+<h2>Class Diagram</h2>
+<p>Class diagram ini menggambarkan struktur sistem kursus online yang terdiri dari kelas Student, PremiumStudent, Course, Instructor, Enrollment, dan CourseEnrollment. Kelas Student digunakan untuk menyimpan data siswa dan daftar kursus yang diambil, sedangkan PremiumStudent merupakan turunan dari Student yang memiliki batas maksimal kursus lebih banyak. Kelas Course menyimpan data kursus dengan menerapkan encapsulation, Instructor menyimpan data instruktur, dan Enrollment merupakan abstract class yang diimplementasikan oleh CourseEnrollment untuk mengelola proses pendaftaran kursus. Hubungan antar kelas menunjukkan interaksi antara siswa, kursus,
+instruktur, dan proses pendaftaran dalam sistem.</p>
+    <img src="class Diagram.jpg"
+         alt="Flowchart Sistem Kursus Online"
+         style="width:100%; max-width:800px; display:block; margin:auto; border-radius:15px;">
+
+</div>
+
+
+<div class="card">
 <h2>01. Program Lengkap Sistem Kursus Online Sederhana</h2>
 
 <div class="card">
@@ -493,7 +512,7 @@ void main() {
 </div>
 
 <div class="card">
-<h2>Kesimpulann</h2>
+<h2>Kesimpulan</h2>
 <p>Sistem Kursus Online Sederhana dapat diselesaikan menggunakan OOP karena memiliki beberapa objek yang saling berhubungan, yaitu siswa, instruktur, dan kursus. Dengan menerapkan konsep objek dan class, enkapsulasi, abstraksi, inheritance, dan polimorfisme, program menjadi lebih terstruktur, mudah dipahami, serta mudah dikembangkan untuk kebutuhan yang lebih kompleks di masa depan</p>
 </div>
 
