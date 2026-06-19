@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 
 <head>
@@ -343,13 +344,21 @@ class Student {
   }
 }
 
-// Inheritance dan Polymorphism
+// Inheritance & Polymorphism
 class PremiumStudent extends Student {
   PremiumStudent(String name, String email)
       : super(name, email);
 
   @override
   int get maxCourseLimit => 5;
+
+  @override
+  void displayInfo() {
+    print("=== Premium Student ===");
+    print("Nama : $name");
+    print("Email : $email");
+    print("Jumlah Kursus : ${enrolledCourses.length}/$maxCourseLimit");
+  }
 }
 
 // Class untuk menyimpan data instruktur
@@ -401,13 +410,13 @@ class CourseEnrollment implements Enrollment {
   @override
   bool register() {
 
-    // Cek pendaftaran ganda
+    // Validasi pendaftaran ganda
     if (student.isEnrolled(course)) {
       print("${student.name} gagal mendaftar ${course.courseName} (sudah terdaftar)");
       return false;
     }
 
-    // Cek batas maksimal kursus
+    // Validasi batas maksimal kursus
     if (!student.canTakeMoreCourses()) {
       print("${student.name} gagal mendaftar ${course.courseName} (batas kursus tercapai)");
       return false;
@@ -417,13 +426,15 @@ class CourseEnrollment implements Enrollment {
     student.addCourse(course);
 
     print("${student.name} berhasil mendaftar ${course.courseName}");
+    print("Instruktur : ${instructor.name}");
+
     return true;
   }
 }
 
 void main() {
 
-  // Data siswa
+  // Data siswa (10 orang)
   Student s1 = Student("Marsya", "marsya@gmail.com");
   Student s2 = PremiumStudent("Putri", "putri@gmail.com");
   Student s3 = Student("Rina", "rina@gmail.com");
@@ -435,7 +446,7 @@ void main() {
   Student s9 = Student("Nanda", "nanda@gmail.com");
   Student s10 = Student("Fajar", "fajar@gmail.com");
 
-  // Data instruktur
+  // Data instruktur (2 orang)
   Instructor i1 = Instructor("Pak Alex");
   Instructor i2 = Instructor("Bu Sinta");
 
@@ -458,7 +469,7 @@ void main() {
   CourseEnrollment(s9, c2, i2).register();
   CourseEnrollment(s10, c3, i2).register();
 
-  // Contoh validasi logika
+  // Pengujian logika sistem
   CourseEnrollment(s1, c1, i1).register();
   CourseEnrollment(s1, c2, i2).register();
 
@@ -466,31 +477,22 @@ void main() {
 
   s1.displayInfo();
   print("");
-
   s2.displayInfo();
   print("");
-
   s3.displayInfo();
   print("");
-
   s4.displayInfo();
   print("");
-
   s5.displayInfo();
   print("");
-
   s6.displayInfo();
   print("");
-
   s7.displayInfo();
   print("");
-
   s8.displayInfo();
   print("");
-
   s9.displayInfo();
   print("");
-
   s10.displayInfo();
 }
 </pre>
