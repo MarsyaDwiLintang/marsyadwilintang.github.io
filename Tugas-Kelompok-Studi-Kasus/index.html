@@ -274,8 +274,8 @@ cursor:pointer;
 
 <div class="card">
 <h2>Flowchart</h2>
-<p>Flowchart ini menggambarkan proses pendaftaran kursus online. Proses dimulai dengan pembuatan data siswa (Student atau PremiumStudent), data kursus (Course), dan data instruktur (Instructor). Selanjutnya siswa memilih kursus yang ingin diambil dan sistem menjalankan proses pendaftaran melalui class CourseEnrollment. Sistem akan memeriksa apakah siswa sudah terdaftar pada kursus yang sama dan apakah jumlah kursus yang diambil telah mencapai batas maksimal. Jika salah satu kondisi tidak terpenuhi, pendaftaran akan ditolak. Jika semua syarat terpenuhi, kursus ditambahkan ke daftar kursus siswa dan data pendaftaran disimpan. Setelah proses selesai, sistem menampilkan informasi siswa, kursus yang diambil, serta instruktur yang mengajar.</p>
-    <img src="Flowchart.jpg"
+<p>Flowchart ini menggambarkan alur pendaftaran kursus, mulai dari pembuatan data siswa, kursus, dan instruktur, kemudian siswa memilih kursus. Sistem akan memeriksa status pendaftaran dan batas kursus sebelum menyimpan data dan menampilkan hasil pendaftaran.</p>
+    <img src="flowchart.jpg"
          alt="Flowchart Sistem Kursus Online"
          style="width:100%; max-width:800px; display:block; margin:auto; border-radius:15px;">
 
@@ -283,8 +283,7 @@ cursor:pointer;
 
 <div class="card">
 <h2>Class Diagram</h2>
-<p>Class diagram ini menggambarkan struktur sistem kursus online yang terdiri dari kelas Student, PremiumStudent, Course, Instructor, Enrollment, dan CourseEnrollment. Kelas Student digunakan untuk menyimpan data siswa dan daftar kursus yang diambil, sedangkan PremiumStudent merupakan turunan dari Student yang memiliki batas maksimal kursus lebih banyak. Kelas Course menyimpan data kursus dengan menerapkan encapsulation, Instructor menyimpan data instruktur, dan Enrollment merupakan abstract class yang diimplementasikan oleh CourseEnrollment untuk mengelola proses pendaftaran kursus. Hubungan antar kelas menunjukkan interaksi antara siswa, kursus,
-instruktur, dan proses pendaftaran dalam sistem.</p>
+<p>Class diagram ini menunjukkan struktur sistem kursus online yang terdiri dari siswa, kursus, instruktur, dan proses pendaftaran. Setiap siswa dapat mengambil kursus sesuai batas yang ditentukan, sedangkan proses pendaftaran dikelola oleh class CourseEnrollment.</p>
     <img src="class Diagram.jpg"
          alt="Flowchart Sistem Kursus Online"
          style="width:100%; max-width:800px; display:block; margin:auto; border-radius:15px;">
