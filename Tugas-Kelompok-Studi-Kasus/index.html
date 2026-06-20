@@ -309,131 +309,204 @@ cursor:pointer;
 // IMPLEMENTASI OOP DENGAN DART
 // ======================================
 
-// Class untuk menyimpan data siswa
+// ======================================
+// CLASS STUDENT
+// Menyimpan data siswa dan kursus yang diikuti
+// ======================================
+
 class Student {
+
+  // Nama siswa
   String name;
+
+  // Email siswa
   String email;
-  List<Course> enrolledCourses = [];
+
+  // Daftar kursus yang diikuti siswa
+  final List<Course> _enrolledCourses = [];
 
   Student(this.name, this.email);
 
   // Batas maksimal kursus siswa biasa
   int get maxCourseLimit => 1;
 
+  // Mengambil daftar kursus (read only)
+  List<Course> get enrolledCourses =>
+      List.unmodifiable(_enrolledCourses);
+
   // Mengecek apakah siswa sudah terdaftar pada kursus
   bool isEnrolled(Course course) {
-    return enrolledCourses.contains(course);
+    return _enrolledCourses.contains(course);
   }
 
-  // Mengecek apakah siswa masih bisa mengambil kursus
+  // Mengecek apakah siswa masih dapat mengambil kursus
   bool canTakeMoreCourses() {
-    return enrolledCourses.length < maxCourseLimit;
+    return _enrolledCourses.length < maxCourseLimit;
   }
 
-  // Menambahkan kursus ke daftar siswa
+  // Menambahkan kursus ke daftar kursus siswa
   void addCourse(Course course) {
-    enrolledCourses.add(course);
+    _enrolledCourses.add(course);
   }
 
   // Menampilkan informasi siswa
   void displayInfo() {
     print("Nama : $name");
     print("Email : $email");
-    print("Jumlah Kursus : ${enrolledCourses.length}/$maxCourseLimit");
+    print(
+      "Jumlah Kursus : ${_enrolledCourses.length}/$maxCourseLimit",
+    );
   }
 }
 
-// Inheritance & Polymorphism
-class PremiumStudent extends Student {
-  PremiumStudent(String name, String email)
-      : super(name, email);
+// ======================================
+// INHERITANCE & POLYMORPHISM
+// PremiumStudent merupakan turunan Student
+// ======================================
 
+class PremiumStudent extends Student {
+
+  PremiumStudent(
+    String name,
+    String email,
+  ) : super(name, email);
+
+  // Siswa premium dapat mengambil lebih banyak kursus
   @override
   int get maxCourseLimit => 5;
 
+  // Menampilkan informasi siswa premium
   @override
   void displayInfo() {
-    print("=== Premium Student ===");
-    print("Nama : $name");
-    print("Email : $email");
-    print("Jumlah Kursus : ${enrolledCourses.length}/$maxCourseLimit");
+    print("=== PREMIUM STUDENT ===");
+    super.displayInfo();
   }
 }
 
-// Class untuk menyimpan data instruktur
+// ======================================
+// CLASS INSTRUCTOR
+// Menyimpan data instruktur
+// ======================================
+
 class Instructor {
+
+  // Nama instruktur
   String name;
 
   Instructor(this.name);
 
+  // Menampilkan informasi instruktur
   void displayInfo() {
     print("Instruktur : $name");
   }
 }
 
-// Encapsulation
+// ======================================
+// ENCAPSULATION
+// Menyimpan data kursus
+// ======================================
+
 class Course {
+
+  // Nama kursus (private)
   String _courseName;
 
   Course(this._courseName);
 
+  // Getter nama kursus
   String get courseName => _courseName;
 
-  void setCourseName(String name) {
-    if (name.trim().isNotEmpty) {
-      _courseName = name;
+  // Setter nama kursus
+  set courseName(String value) {
+    if (value.trim().isNotEmpty) {
+      _courseName = value;
     }
   }
 
+  // Menampilkan informasi kursus
   void displayInfo() {
     print("Kursus : $_courseName");
   }
 }
 
-// Abstraction
+// ======================================
+// ABSTRACTION
+// Interface untuk proses pendaftaran
+// ======================================
+
 abstract class Enrollment {
+
+  // Method pendaftaran kursus
   bool register();
 }
 
-// Class untuk proses pendaftaran kursus
+// ======================================
+// COURSE ENROLLMENT
+// Mengelola proses pendaftaran kursus
+// ======================================
+
 class CourseEnrollment implements Enrollment {
-  Student student;
-  Course course;
-  Instructor instructor;
+
+  // Data siswa
+  final Student student;
+
+  // Data kursus
+  final Course course;
+
+  // Data instruktur
+  final Instructor instructor;
 
   CourseEnrollment(
-      this.student,
-      this.course,
-      this.instructor);
+    this.student,
+    this.course,
+    this.instructor,
+  );
 
+  // Memproses pendaftaran kursus
   @override
   bool register() {
 
     // Validasi pendaftaran ganda
     if (student.isEnrolled(course)) {
-      print("${student.name} gagal mendaftar ${course.courseName} (sudah terdaftar)");
+      print(
+        "${student.name} gagal mendaftar "
+        "${course.courseName} (sudah terdaftar)",
+      );
       return false;
     }
 
     // Validasi batas maksimal kursus
     if (!student.canTakeMoreCourses()) {
-      print("${student.name} gagal mendaftar ${course.courseName} (batas kursus tercapai)");
+      print(
+        "${student.name} gagal mendaftar "
+        "${course.courseName} (batas kursus tercapai)",
+      );
       return false;
     }
 
     // Menambahkan kursus ke daftar siswa
     student.addCourse(course);
 
-    print("${student.name} berhasil mendaftar ${course.courseName}");
-    print("Instruktur : ${instructor.name}");
+    print(
+      "${student.name} berhasil mendaftar "
+      "${course.courseName}",
+    );
+
+    print(
+      "Instruktur : ${instructor.name}",
+    );
 
     return true;
   }
 }
 
+// ======================================
+// MAIN PROGRAM
+// ======================================
+
 void main() {
 
-  // Data siswa (10 orang)
+  // Data siswa (10 siswa)
   Student s1 = Student("Marsya", "marsya@gmail.com");
   Student s2 = PremiumStudent("Putri", "putri@gmail.com");
   Student s3 = Student("Rina", "rina@gmail.com");
@@ -445,7 +518,7 @@ void main() {
   Student s9 = Student("Nanda", "nanda@gmail.com");
   Student s10 = Student("Fajar", "fajar@gmail.com");
 
-  // Data instruktur (2 orang)
+  // Data instruktur (2 instruktur)
   Instructor i1 = Instructor("Pak Alex");
   Instructor i2 = Instructor("Bu Sinta");
 
@@ -476,22 +549,31 @@ void main() {
 
   s1.displayInfo();
   print("");
+
   s2.displayInfo();
   print("");
+
   s3.displayInfo();
   print("");
+
   s4.displayInfo();
   print("");
+
   s5.displayInfo();
   print("");
+
   s6.displayInfo();
   print("");
+
   s7.displayInfo();
   print("");
+
   s8.displayInfo();
   print("");
+
   s9.displayInfo();
   print("");
+
   s10.displayInfo();
 }
 </pre>
