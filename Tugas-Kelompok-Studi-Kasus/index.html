@@ -273,6 +273,16 @@ cursor:pointer;
 </div>
 
 <div class="card">
+<h2>Class Diagram</h2>
+<p>Class diagram ini menunjukkan struktur sistem kursus online yang terdiri dari siswa, kursus, instruktur, dan proses pendaftaran. Setiap siswa dapat mengambil kursus sesuai batas yang ditentukan, sedangkan proses pendaftaran dikelola oleh class CourseEnrollment.</p>
+    <img src="ft1.jpg"
+         alt="Flowchart Sistem Kursus Online"
+         style="width:100%; max-width:800px; display:block; margin:auto; border-radius:15px;">
+
+</div>
+
+
+<div class="card">
 <h2>Flowchart</h2>
 <p>Flowchart ini menggambarkan alur pendaftaran kursus, mulai dari pembuatan data siswa, kursus, dan instruktur, kemudian siswa memilih kursus. Sistem akan memeriksa status pendaftaran dan batas kursus sebelum menyimpan data dan menampilkan hasil pendaftaran.</p>
     <img src="ft2.jpg"
@@ -282,11 +292,40 @@ cursor:pointer;
 </div>
 
 <div class="card">
-<h2>Class Diagram</h2>
-<p>Class diagram ini menunjukkan struktur sistem kursus online yang terdiri dari siswa, kursus, instruktur, dan proses pendaftaran. Setiap siswa dapat mengambil kursus sesuai batas yang ditentukan, sedangkan proses pendaftaran dikelola oleh class CourseEnrollment.</p>
-    <img src="ft1.jpg"
-         alt="Flowchart Sistem Kursus Online"
-         style="width:100%; max-width:800px; display:block; margin:auto; border-radius:15px;">
+<h2>Pseducode</h2>
+<p>Pseudocode digunakan untuk menggambarkan alur logika proses pendaftaran kursus dalam bentuk langkah-langkah sederhana. Kode semu membantu memahami proses sistem sebelum diimplementasikan ke dalam program.</p>
+
+<div class="card">
+<div class="code-box">
+
+<pre>  
+Mulai
+
+Membuat data Student dan PremiumStudent
+Membuat data Instructor
+Membuat data Course
+
+Menampilkan proses pendaftaran kursus
+
+Jika siswa sudah terdaftar pada kursus maka
+    Tampilkan pesan "Pendaftaran gagal, siswa sudah terdaftar"
+Jika tidak maka
+    Jika jumlah kursus yang diambil telah mencapai batas maksimal maka
+        Tampilkan pesan "Pendaftaran gagal, batas kursus tercapai"
+    Jika tidak maka
+        Tambahkan Course ke daftar kursus Student
+        Simpan data CourseEnrollment
+        Tampilkan pesan "Pendaftaran berhasil"
+    End Jika
+End Jika
+
+Menampilkan informasi siswa:
+- Nama
+- Email
+- Jumlah kursus yang diambil
+
+Selesai
+</pre>
 
 </div>
 
