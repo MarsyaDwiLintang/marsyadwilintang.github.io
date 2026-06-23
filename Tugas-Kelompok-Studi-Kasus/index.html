@@ -447,6 +447,9 @@ class Course {
   // Nama kursus (private)
   String _courseName;
 
+  // Daftar siswa yang terdaftar pada kursus ini
+  final List<Student> _enrolledStudents = [];
+
   Course(this._courseName);
 
   // Getter nama kursus
@@ -459,9 +462,30 @@ class Course {
     }
   }
 
+  // Mengambil daftar siswa (read only)
+  List<Student> get enrolledStudents =>
+      List.unmodifiable(_enrolledStudents);
+
+  // Menambahkan siswa ke daftar kursus
+  void addStudent(Student student) {
+    _enrolledStudents.add(student);
+  }
+
   // Menampilkan informasi kursus
   void displayInfo() {
     print("Kursus : $_courseName");
+  }
+
+  // Menampilkan daftar siswa yang terdaftar di kursus ini
+  void displayEnrolledStudents() {
+    print("=== DAFTAR SISWA KURSUS: $_courseName ===");
+    if (_enrolledStudents.isEmpty) {
+      print("Belum ada siswa yang mendaftar.");
+    } else {
+      for (var i = 0; i < _enrolledStudents.length; i++) {
+        print("${i + 1}. ${_enrolledStudents[i].name} (${_enrolledStudents[i].email})");
+      }
+    }
   }
 }
 
@@ -522,6 +546,9 @@ class CourseEnrollment implements Enrollment {
 
     // Menambahkan kursus ke daftar siswa
     student.addCourse(course);
+
+    // Menambahkan siswa ke daftar kursus
+    course.addStudent(student);
 
     print(
       "${student.name} berhasil mendaftar "
@@ -611,6 +638,13 @@ void main() {
   print("");
 
   s10.displayInfo();
+
+  print("\n===== DAFTAR SISWA PER KURSUS =====");
+  c1.displayEnrolledStudents();
+  print("");
+  c2.displayEnrolledStudents();
+  print("");
+  c3.displayEnrolledStudents();
 }
 </pre>
 
